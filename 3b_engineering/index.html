@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>3B Engineering</title>
+
+		<meta name="description" content="3B Engineering - Bigger, Better, 빨리">
+		<meta name="author" content="Daniel Stonier">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+                <!-- Uncomment this and call this url with 'index.html?print-pdf'. Then ctrl-p and print as pdf to save -->
+                <!--<link rel="stylesheet" href="css/print/pdf.css">-->
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>3B Engineering</h1>
+					<h3>Bigger, Better, 빨리!</h3>
+					<p>
+						<small><a href="http://github.com/stonier">Daniel Stonier</a> / <a href="mailto:d.stonier@gmail.com">d.stonier@gmail.com</a></small>
+					</p>
+				</section>
+
+                <section id="Doorways">
+                    <h2>Doorways</h2>
+                    <b>미생 : 김대리-장그래</b>
+                    <pre>
+"당신 실패하지 않았어. 나도 취직하기 되게 힘들었거든. 근데 합격하고 입사하고 나서 보니까 말이야, 성공이 아니라 그냥 문을 하나 연 것 같은 느낌이더라고. 어쩌면 우린 성공과 실패가 아니라 죽을 때까지 다가오는 문만 열어가면서 살아가는 게 아닐까 싶어."
+
+"그럼 성공은요?"
+
+"음..자기가 그 순간에 어떤 의미를 부여하느냐에 달린 문제가 아닐까.
+일하다 보면은 깨진 계약인데도 성장한 것 같고 뿌듯한 케이스가 있어.
+그럼 그건 실패한 걸까?"
+
+"졌어도 기분 좋은 바둑이 있어요. 그런 걸까요?"
+
+"잘은 모르지만, 그렇지 않을까? 내일부터 다시 잘 지내보자."
+
+"감사합니다."
+                    </pre>
+                    <aside class="notes">
+                        Lead into who am I, also particularly relevant story later.
+                    </aside>
+                </section>
+                <section id="WhoAmI">
+                    <div style="float:left;">
+                        <img width="200" height="100%" src="images/innovation_team_logo.jpg" alt="Yujin Robot"><br/>
+                        <img width="200" height="100%" src="images/australia_globe.png" alt="Australia"><br/>
+                        <img width="200" height="100%" src="images/tux-robot.png" alt="Tux Robot">
+                    </div>
+                    <h2>Who Am I?</h2>
+                    <p>
+                        Daniel Stonier
+                    </p>
+                    <p>
+                        Yujin Robot <a href="http://inno.yujinrobot.com">Innovation Team</a> Leader.<br/><br/>
+                        <small>
+                            Embedded/Control Engineer<br/>Algorithms Monkey<br/>Software Architect<br/><br/>
+                            <i>B Science., B Electrical Engineering, Phd. Mathematics.</i>
+                        </small>
+                    </p>
+                </section>
+                <section id="WhoAmI2">
+                    <h2>Who Am I?</h2>
+                    <div>
+                    <p style="text-align: left;">The journey...</p>
+                    <small>
+                        <ol>
+                            <li class="fragment"><b style="color:magenta;">School</b>
+                                <ul>
+        	                        <li>Country boy dreaming of being a Jackaroo</li>
+                                </ul>
+                            </li>
+                            <li class="fragment"><b style="color:magenta;">Academia</b>
+                                <ul>
+			                        <li>Engineering & Math at University</li>
+			                        <li>Math Professor for 2 years...no Jobs in Oz!</li>
+		                            <li>PostDoc in Engineering at <a href="http://www.kaist.edu/html/en/index.html">KAIST</a></li>
+		                            <li>Work Experience at Yujin Robot</li>
+                                </ul>
+                            </li>
+                            <li class="fragment"><b style="color:magenta;">Company</b>
+		                        <ul>
+			                        <li>Control & Embedded Systems Engineer</li>
+			                        <li>Product Experience - Cleaning Robots</li>
+			                        <li>Software Design Architect</li>
+		                            <li>Product Experience - Turtlebot</li>
+		                            <li>Lead Developer</li>
+			                        <li>Innovation Team - aka Startup</li>
+			                    </ul>
+                            </li>
+                        </ol>
+                    </small>
+                    <br/><br/>
+                    <p class="fragment" style="text-align: right;">From the outback to Seoul...to find what I love doing</p>
+                    </div>
+
+                    <aside class="notes">
+                        Some blah about my journey
+                    </aside>
+                </section>
+                <section id="WhoAmIPictures">
+                    <h2>Who Am I?</h2>
+                    <p style="vertical-align: center;">
+	                    <img width="300" height="100%" src="images/outback.jpg" alt="Outback"/>
+	                    <div style="vertical-align: center;"><img width="50" height="100%" src="images/arrow_down.png" alt="Arrow"/></div>
+	                    <img width="300" height="100%" src="images/seoul.jpg" alt="Seoul"/>
+	                </p>
+                </section>
+                <section id="WhyARoboticsCompany">
+                    <h2>Why A Robotics Company?</h2>
+                    <p style="text-align: left;">
+                        It does it all:
+                    </p>
+                    <div style="float:right;">
+                        <img width="300" height="100%" src="images/homerun.jpg" alt="RobHaz">
+                    </div>
+                    <br/><p>
+                        <i style="color:cyan">Idea + Implementation + Product</i>
+                    </p><br/>
+                    <p>
+                        <i style="color:blue;">New technology every day, every year</i>
+                    </p><br/>
+                    <p>
+                        <i style="color:magenta;">Hundreds of open doorways to explore</i>
+                    </p>
+                    <aside class="notes">
+                        Idea + Implementation + Product
+                    </aside>
+                </section>
+                <section id="Contents">
+                    <h2>Contents</h2>
+                    <ul>
+                        <li>Overview</li>
+                        <li>Working in a Team</li>
+                        <li>Problem Solving</li>
+                        <li>Quality Control</li>
+                        <li>The Developer Network</li>
+                        <li>Programming</li>
+                        <li>English</li>
+                        <li>Interesting Observations & Stories</li>
+                        <li>What Can You Do Now?</li>
+                        <li>Yujin Gophers & GoCarts</li>
+                     </ul>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="Overview">
+                    <h2>Overview</h2>
+                    <pre>1) There are no rules.
+But there are some good guidelines....always be ready to creatively break these if the situation demands...
+
+2) This is actually mostly about people. About how to get the most out of yourself, but also how to
+help your team be the best it can be (with least stress). Building a better product and helping your company
+are of course also important, but in the end it is mostly about people. These will follow if you care for
+the poeple first.
+
+3) Some about processes (thinking and automation) to help you get where you want to be.
+                    </pre>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="WorkinginaTeam">
+                    <h2>Working in a Team?</h2>
+                    <p>The happy guy/???</p>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="ProblemSolving">
+                    <h2>Problem Solving?</h2>
+                    <p>???</p>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="QualityControl">
+                    <h2>Quality Control</h2>
+                    <pre>Assuring that the quality of a product does not get out of hand and add to the cost of its manufacture or design.
+
+This is an interesting statement because it can go both ways - too much and too little quality control.
+                    </pre>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="TheDeveloperNetwork">
+                    <h2>Developer Network</h2>
+                    <p>???</p>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="ContentsProgramming">
+                    <h2>Programming</h2>
+                    <ul>
+                        <li>Which Language?</li>
+                        <li>Style</li>
+                        <li>Debugging</li>
+                        <li>Scaling</li>
+                        <li>Testing</li>
+                        <li>Don't Reinvent the Wheel</li>
+                        <li>Sharing</li>
+                        <li>Letting Go</li>
+                     </ul>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="WhichLanguage">
+                    <h2>Which Language?</h2>
+                    <br/><p style="color:magenta;">Food for thought</p><br/>
+                    <p><text style="color:cyan">Trend</text> : C++ where C used to be</p><br/>
+                    <p><text style="color:cyan">Trivia</text> : Java for set-top tv boxes...say again!?</p><br/>
+                    <p><text style="color:cyan">Practice</text> : Scripting langauges for simple tasks/tests</p><br/>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="Style">
+	                <section id="Style1">
+	                    <h2>Style</h2>
+	                    <br/><p style="color:magenta;">Always think of the next or co-developer on the project</p><br/>
+	                    <ul>
+	                      <li>This is the guiding principle of many google style guides.</li>
+	                      <li>Avoid fancy if it can't be continued at your company.</li>
+	                    </ul>
+	                    <aside class="notes">
+	                        Google - even to the point of banning boost libraries.
+	                        Fancy - my python bindings, or an fgpa expert when the company doesn't really focus on that.
+	                    </aside>
+	                </section>
+	                <section id="Optimisation">
+	                    <h2>Optimisation</h2>
+	                    <br/><p style="color:magenta;">Be careful of optimising too early</p><br/>
+	                    <ul>
+                          <li>Optimising code can take a looong time</li>
+	                      <li>Optimising code can become complex and inflexible</li>
+	                      <li>Wait for better cpus or invest in 1-2yrs of devel?</li>
+	                    </ul>
+	                    <br/><br/>
+	                    <p style="text-align: left">e.g. vision slam cpus</p><br/>
+	                    <p>PC -> <text style="color: cyan">cortex</text> -> arm1176jzf-s -> non-floating point arm-><text style="color: cyan">cortex</text></p>
+	                    <aside class="notes">
+	                        Vision slam boards
+	                    </aside>
+	                </section>
+                    <section id="Spaghetti">
+	                    <div style="float:left;">
+	                        <img width="200" height="100%" src="images/spaghetti.jpg" alt="Spaghetti"><br/>
+                            <img width="200" height="100%" src="images/spaghetti_code.jpg" alt="Spaghetti Code"><br/>
+                            <img width="200" height="100%" src="images/spaghetti_hardware.jpg" alt="Spaghetti Hardware"><br/>
+	                    </div>
+                        <h2>How to Avoid Spaghetti</h2>
+                        <br/><p style="color:magenta;">Typical company problem: consider 5 developers over 10 years all contributing to one project.</p><br/>
+                        <ul>
+                          <li>Follow style guidelines above.</li>
+                          <li>If its not your project
+                            <ul>
+                              <li>Follow the existing style...<text style="color:cyan">be consistent</text></li>
+                            </ul>
+                          </li>
+                          <li><text style="color:red">Be very careful about refactoring stable code</text></li>
+                        </ul>
+                        <aside class="notes">
+                            Todo...some example code
+                        </aside>
+                    </section>
+                </section>
+                <section id="Scaling">
+	                <section id="Scaling2">
+	                    <h2>Scaling</h2>
+	                    <table style="width:100%">
+						  <tr>
+						    <td style="text-align: center; color:red">Standalone Programs</td>
+	                        <td style="text-align: center; color:cyan">Libraries and Binaries</td>
+						  </tr>
+						  <tr>
+	                        <td style="text-align: center; color:red">Makefiles</td>
+	                        <td style="text-align: center; color:cyan">CMake/Catkin/Autotools</td>
+						  </tr>
+	                      <tr>
+	                        <td style="text-align: center; color:red">Platform code (e.g. QNX vs posix)</td>
+	                        <td style="text-align: center; color:cyan">Abstracted Platform Code</td>
+	                      </tr>
+						</table>
+	
+	                    <div>
+	                    </div>
+	                    <br/><p>It is worth the time to learn tools to <text style="color: cyan">automate</text> these processes.</p>
+                        <br/><p style="color:green;">Catkin Demo!!</p>
+	                    <aside class="notes">
+	                        Cleaning robot, cmake demonstration.
+	                    </aside>
+	                </section>
+                    <section id="ScalingCleaningRobot">
+                        <h2>Vision Slam Development</h2>
+                        <p style="color:magenta;">Old Yujin Process</p>
+                        <ul>
+                          <li>Make Compile on a virtual machine (5-10mins)</li>
+                          <li>Download</li>
+                          <li>Run for 10-20mins waiting for a bug</li>
+                          <li>Hack Code</li>
+                          <li>Repeat</li>
+                        </ul>
+                        <br/><p style="color:magenta;">New Yujin Process</p>
+                        <ul>
+                          <li>CMake/Catkin Compile Library/Binary Tree (<1min)</li>
+                          <li>Test Algorithms Locally with Recorded Data Sets</li>
+                          <li>Hack Code</li>
+                          <li>Sometimes download to robot for real world testing</li>
+                          <li>Repeat</li>
+                        </ul>
+                        <br/><p style="color:green;">DSlam Demo!!</p>
+                        <aside class="notes">
+                            Dslam demonstration
+                        </aside>
+                    </section>
+                </section>
+                <section id="Debugging">
+                    <h2>Debugging</h2>
+                    <ul>
+                      <li>GDB - Backtraces</li>
+                      <li>GDB - Core Dumps</li>
+                      <li>GDB - Remote Server</li>
+                      <li>Valgrind</li>
+                      <li>None of the above</li>
+                    </ul>
+                    <aside class="notes">
+                    </aside>
+                </section>
+                <section id="Testing">
+                    <h2>Unit Testing</h2>
+                    <ul>
+                      <li><font color="cyan">Code design</font>
+                        <ul>
+                          <li>Separate platform code from algorithm code.</li>
+                          <li>Create dummy platform drivers, output good test data.</li>
+                        </ul>
+                      </li>
+                      <li><font color="cyan">Continuous Integration</font>
+                        <ul>
+                          <li>Jenkins</li>
+                          <li>Travis</li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <aside class="notes">
+                        Talk about the ros open source build farm
+                    </aside>
+                </section>
+                <section id="DontReinventtheWheel">
+                    <h2>Don't Reinvent the Wheel</h2>
+                    <p>When to use and when not to use?When to use AND contribute?</p>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="Sharing">
+                    <img style="float: right;" width="200" height="100%" src="images/github.jpg" alt="Github">
+                    <h2>Sharing</h2>
+                    <p style="color:magenta;">When is it wise to share your own code?</p><br/>
+                    <ul>
+                      <li>Is it a <font color="cyan">differentiator</font>? If not, perhaps....</li>
+                      <li>Will extra users help make it stable?</li>
+                      <li>Will the benefits be worth the work?
+                    </ul>
+                    <aside class="notes">
+                        There is no free lunch
+                    </aside>
+                </section>
+                <section id="LettingGo">
+                   <section id="LettingGoDetails">
+	                    <div style="float:right;">
+	                        <img width="200" height="100%" src="images/otl.jpg" alt="Letting Go">
+	                    </div>
+	                    <h2>Letting Go</h2>
+	                    <p style="color:magenta;">It's hard to let go of something you created...</p>
+	                    <ul>
+	                        <li>When your project is outdated - enter a new doorway
+	                          <ul>
+	                            <small>
+	                            <li>Think of this as an opportunity instead of a loss</li>
+	                            <li>Einstein@Yujin</li>
+	                            <li>Imperial College of London</li>
+	                            </small>
+	                          </ul> 
+	                        <li class="fragment">Be careful of managing too many projects
+	                          <ul>
+	                            <small>
+	                            <li>You won't be able to do anything new</li>
+	                            <li>Put some on hold</li>
+	                            </small>
+	                          </ul>
+	                        </li>
+	                        <li class="fragment">Leave open projects in the wild
+	                          <ul>
+	                            <small>
+	                            <li>Your rubbish can be someone else's gold!</li>
+	                            </small>
+	                          </ul>
+	                        </li>
+	                    </ul>
+	                    <aside class="notes">
+	                        - Connect einstein's story to doorways.
+	                    </aside>
+	                </section>
+	                <section id="LettingGoPics">
+	                    <h2>Letting Go</h2>
+	                    <div style="float:left;">
+                          <div><img width="200" height="100%" src="images/cafero.jpg" alt="Cafero"></div>
+	                      <div><img width="300" height="100%" src="images/stargazer.png" alt="StarGazer"></div>
+	                    </div>
+                        <img  style="vertical-align: bottom; float:left; margin:1ex;" width="50" height="100%" src="images/arrow_right_blue.png" alt="Arrow"/>
+                        <img  style="float:left;" width="200" height="100%" src="images/nav_comic.png" alt="NaviStack"/>
+                        <img  style="vertical-align: bottom; float:left; margin:1ex;" width="50" height="100%" src="images/arrow_right_blue.png" alt="Arrow"/>
+                        <img  style="float:left;" width="200" height="100%" src="gocart/gocart_assembled.jpg" alt="GoCart"/>
+                        <br style="clear: both;"/>
+	                </section>
+                </section>
+                <section id="English">
+                    <h2>English</h2>
+                    <br/><p style="color:magenta;">Without it - Korea can be a Small Place</p><br/>
+                    <div style="float:right;">
+                        <img width="400" height="100%" src="images/robhaz.jpg" alt="RobHaz">
+                    </div>
+                    <ul>
+                      <li>Companies
+                        <ul>
+                          <small>
+                          <li>Daum</li><li>Naver</li><li>Cyworld</li><li>OPROS</li>
+                          </small>
+                        </ul>
+                      <li>Colleagues - 한규산</li>
+                      <li>Hardware - DSPF8212 ---></li>
+                    </ul>
+                    <aside class="notes">
+                        Opros - too busy defending instead of embracing.
+                        Should be able to talk about these with no problem.
+                    </aside>
+                </section>
+                <section id="InterestingObservationsandStories">
+                    <section id="SmallvsBig">
+	                    <h2>Interesting Observations and Stories</h2>
+	                    <br/><p style="color:magenta;">Small vs Big Companies</p><br/>
+	                    <ul>
+	                      <li>Yujin vs Samsung</li>
+                          <li>Startup/OSRF vs Google</li>
+                          <li>What motivates the best developers?
+                            <ul>
+                              <small>
+                              <li>In Western Countries?</li>
+                              <li>In Eastern Countries?</li>
+                              </small>
+                            </ul>
+                          </li>
+	                      <li>How to succeed as a small company?</li>
+	                    </ul>
+	                    <aside class="notes">
+	                        Small vs Big
+	                    </aside>
+                    </section>
+                    <section id="StartupVsOldSchool">
+                        <h2>Startup vs Old School</h2>
+                        <br/><p style="color:magenta;">Clash of Philosophies</p><br/>
+                        <p>Hard to mix the energy and creativity of a Kakao with the old school leadership of a company like Yujin.</p>
+                        <aside class="notes">
+                            Talk about stories from Yujin, why we made the innovation team.
+                        </aside>
+                    </section>
+                    <section id="YujinNicknames">
+                        <h2>Yujin Nicknames</h2>
+                        <br/><p style="color:magenta;">Impossible to Remember Korean Names</p><br/>
+                        <ul>
+                          <li>Einstein</li>
+                          <li>민장 / Jang Max</li>
+                          <li>유연히 / Miss Accident</li>
+                        </ul>
+                        <aside class="notes">
+                            Nicknames
+                        </aside>
+                    </section>
+                    <section id="Users">
+                        <h2>Users</h2>
+                        <br/><p style="color:magenta;">They don't always do what you expect</p><br/>
+                        <p><text style="color:cyan">Finishing</text> your project is just the <text style="color:cyan">beginning</text>!!!</p>
+                        <br/>
+                        <p style="color:green">Eunseong's Video!!!</p>
+                    <!-- 
+                        <iframe src="https://docs.google.com/a/yujinrobot.com/file/d/0B4zstYGigNdQZzNPMUxFcS13b00/preview" width="480" height="320"></iframe>
+                     -->
+                        
+                    </section>
+                </section>
+                <section id="WhatCanYouDoNow">
+	                <section id="WhatCanYouDoNow1">
+	                    <h2>What Can You Do Now?</h2>
+	                    <p style="color:magenta;">Start Exploring the Real World Now</p>
+	                    <p style="color:magenta;">Watch How Others Work & Think</p><br/>
+	                    <ul>
+	                      <li>Be a sponge for the next 5-10 years</li>
+	                      <li>Join mailing lists
+	                        <ul>
+                              <small>
+	                          <li>Pick an open project you use (or at least have interest).</li>
+	                          <li>Lurking is ok!</li>
+	                          <li>But contributing is even better!</li>
+	                          </small>
+                            </ul>
+	                      </li>
+	                      <li>Subscribe to email newsletters</li>
+	                      <li>...</li>
+	                    </ul>
+	                    <aside class="notes">
+	                        - Explain my first 3 years at Yujin.
+	                        - Some of these things are easy for software, not so easy for hardware I think.
+	                        - I lurked on the enlightenment emailing list for 10 years.
+	                        - Contributing is important. It helps you get over the fear.
+	                        - Newsletters are a great source of information in the embedded world.
+	                    </aside>
+	                </section>
+                    <section id="WhatCanYouDoNow2">
+                        <h2>What Can You Do Now?</h2>
+                        <p style="color:magenta;">Interested in startups?</p>
+                        <p style="color:magenta;">IOT?</p>
+                        <p style="color:magenta;">Just building your Network?</p><br/>
+                        <ul>
+                          <li>Find people outside your field to talk with</li>
+                          <li>Join interesting groups, e.g. <a href="http://www.meetup.com/seoul-tech-society">Seoul Tech Society</a></li>
+                          <li>Start hobby/research projects across disciplines
+                          </li>
+                        </ul>
+                        <aside class="notes">
+                            - Helps you generate ideas.
+                            - Good practice for multi-team work later.
+                            - If you want to work in a startup, this is critical.
+                            - Starts building your network.
+                        </aside>
+                    </section>
+                </section>
+                <section id="Stuff">
+                    <section id="Roboworld">
+                        <h2>Roboworld</h2>
+                        <br/><p style="color:magenta;">Robosem, Waiterbot and GoCart</p><br/>
+                        <p style="color:green">Roboworld Video!!!</p>
+                        <!-- 
+                        <iframe id=roboworld_video" src="https://docs.google.com/a/yujinrobot.com/file/d/0B4zstYGigNdQZzNPMUxFcS13b00/preview" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
+                        <iframe src="https://docs.google.com/a/yujinrobot.com/file/d/0B4zstYGigNdQZzNPMUxFcS13b00/preview" width="640" height="480"></iframe>
+                         -->
+                    </section>
+	                <section id="Gophers">
+	                    <h2>Gophers & GoCarts</h2>
+	                    <img style="vertical-align: top;" "width="300" height="100%" src="images/gopher.png" alt="Gophers">
+	                    <img width="300" height="100%" src="images/gocart.jpg" alt="Gocart">
+                        <p style="color:green">GoCart Media!!!</p>
+	                    <aside class="notes">
+	                        Jump to my image/videos folder of the gocart.
+	                    </aside>
+	                </section>
+                </section>
+                <section>
+                    <h1>THE END</h1>
+                    <h3>By Daniel Stonier / d.stonier@gmail.com</h3>
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- Example of nested vertical slides -->
+				<!-- 
+				<section>
+					<section>
+						<h2>Vertical Slides</h2>
+						<p>
+							Slides can be nested inside of other slides,
+							try pressing <a href="#" class="navigate-down">down</a>.
+						</p>
+						<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section>
+						<h2>Basement Level 1</h2>
+						<p>Press down or up to navigate.</p>
+					</section>
+					<section>
+						<h2>Basement Level 2</h2>
+						<p>Cornify</p>
+						<a class="test" href="http://cornify.com">
+							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
+						</a>
+					</section>
+					<section>
+						<h2>Basement Level 3</h2>
+						<p>That's it, time to go back up.</p>
+						<a href="#/2" class="image">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
+						</a>
+					</section>
+				</section>
+
+				<section>
+					<h2>Slides</h2>
+					<p>
+						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
+					</p>
+				</section>
+
+				<section>
+					<h2>Point of View</h2>
+					<p>
+						Press <strong>ESC</strong> to enter the slide overview.
+					</p>
+					<p>
+						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
+					</p>
+				</section>
+
+
+				<section id="transitions">
+					<h2>Transition Styles</h2>
+					<p>
+						You can select from different transitions, like: <br>
+						<a href="?transition=cube#/transitions">Cube</a> -
+						<a href="?transition=page#/transitions">Page</a> -
+						<a href="?transition=concave#/transitions">Concave</a> -
+						<a href="?transition=zoom#/transitions">Zoom</a> -
+						<a href="?transition=linear#/transitions">Linear</a> -
+						<a href="?transition=fade#/transitions">Fade</a> -
+						<a href="?transition=none#/transitions">None</a> -
+						<a href="?#/transitions">Default</a>
+					</p>
+				</section>
+
+				<section id="themes">
+					<h2>Themes</h2>
+					<p>
+						Reveal.js comes with a few themes built in: <br>
+						<a href="?#/themes">Default</a> -
+						<a href="?theme=sky#/themes">Sky</a> -
+						<a href="?theme=beige#/themes">Beige</a> -
+						<a href="?theme=simple#/themes">Simple</a> -
+						<a href="?theme=serif#/themes">Serif</a> -
+						<a href="?theme=night#/themes">Night</a> <br>
+						<a href="?theme=moon#/themes">Moon</a> -
+						<a href="?theme=solarized#/themes">Solarized</a>
+					</p>
+					<p>
+						<small>
+							* Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
+						</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Global State</h2>
+					<p>
+						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+						will be added as a class to the document element when the slide is open. This lets you
+						apply broader style changes, like switching the background.
+					</p>
+				</section>
+
+				<section data-state="customevent">
+					<h2>Custom Events</h2>
+					<p>
+						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+					</p>
+					<pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+Reveal.addEventListener( 'customevent', function() {
+	console.log( '"customevent" has fired' );
+} );
+					</code></pre>
+				</section>
+
+				<section>
+					<section data-background="#007777">
+						<h2>Slide Backgrounds</h2>
+						<p>
+							Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
+						</p>
+						<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png">
+						<h2>Image Backgrounds</h2>
+						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" data-background-repeat="repeat" data-background-size="100px">
+						<h2>Repeated Image Backgrounds</h2>
+						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+					</section>
+				</section>
+
+				<section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+					<h2>Background Transitions</h2>
+					<p>
+						Pass reveal.js the <code>backgroundTransition: 'slide'</code> config argument to make backgrounds slide rather than fade.
+					</p>
+				</section>
+
+				<section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
+					<h2>Background Transition Override</h2>
+					<p>
+						You can override background transitions per slide by using <code>data-background-transition="slide"</code>.
+					</p>
+				</section>
+
+				<section>
+					<h2>Clever Quotes</h2>
+					<p>
+						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+					</p>
+					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Pretty Code</h2>
+					<pre><code data-trim contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) {
+        node.className += ' roll';
+      }
+    }
+  }
+}
+					</code></pre>
+					<p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+				</section>
+
+				<section>
+					<h2>Intergalactic Interconnections</h2>
+					<p>
+						You can link between slides internally,
+						<a href="#/2/3">like this</a>.
+					</p>
+				</section>
+
+				<section>
+					<section id="fragments">
+						<h2>Fragmented Views</h2>
+						<p>Hit the next arrow...</p>
+						<p class="fragment">... to step through ...</p>
+						<ol>
+							<li class="fragment"><code>any type</code></li>
+							<li class="fragment"><em>of view</em></li>
+							<li class="fragment"><strong>fragments</strong></li>
+						</ol>
+
+						<aside class="notes">
+							This slide has fragments which are also stepped through in the notes window.
+						</aside>
+					</section>
+					<section>
+						<h2>Fragment Styles</h2>
+						<p>There's a few styles of fragments, like:</p>
+						<p class="fragment grow">grow</p>
+						<p class="fragment shrink">shrink</p>
+						<p class="fragment roll-in">roll-in</p>
+						<p class="fragment fade-out">fade-out</p>
+						<p class="fragment highlight-red">highlight-red</p>
+						<p class="fragment highlight-green">highlight-green</p>
+						<p class="fragment highlight-blue">highlight-blue</p>
+						<p class="fragment current-visible">current-visible</p>
+						<p class="fragment highlight-current-blue">highlight-current-blue</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Spectacular image!</h2>
+					<a class="image" href="http://lab.hakim.se/meny/" target="_blank">
+						<img width="320" height="299" src="http://s3.amazonaws.com/hakim-static/portfolio/images/meny.png" alt="Meny">
+					</a>
+				</section>
+
+				<section>
+					<h2>Export to PDF</h2>
+					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, below is an example that's been uploaded to SlideShare.</p>
+					<iframe id="slideshare" src="http://www.slideshare.net/slideshow/embed_code/13872948" width="455" height="356" style="margin:0;overflow:hidden;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
+					<script>
+						document.getElementById('slideshare').attributeName = 'allowfullscreen';
+					</script>
+				</section>
+
+				<section>
+					<h2>Take a Moment</h2>
+					<p>
+						Press b or period on your keyboard to enter the 'paused' mode. This mode is helpful when you want to take distracting slides off the screen
+						during a presentation.
+					</p>
+				</section>
+
+				<section>
+					<h2>Stellar Links</h2>
+					<ul>
+						<li><a href="http://slid.es">Try the online editor</a></li>
+						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
+						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>THE END</h1>
+					<h3>BY Hakim El Hattab / hakim.se</h3>
+				</section>
+-->
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
