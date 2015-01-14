@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>ROS Biz</title>
+
+		<meta name="description" content="ROS Biz">
+		<meta name="author" content="Daniel Stonier">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+                <!-- Uncomment this and call this url with 'index.html?print-pdf'. Then ctrl-p and print as pdf to save -->
+                <!--<link rel="stylesheet" href="css/print/pdf.css">-->
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>ROS Biz</h1>
+					<h3>Is it worth investing in?</h3>
+					<p>
+						<small><a href="http://github.com/stonier">Daniel Stonier</a> / <a href="mailto:d.stonier@gmail.com">d.stonier@gmail.com</a></small>
+					</p>
+				</section>
+
+                <section id="WhoAmI">
+                    <div style="float:left;">
+                        <img width="200" height="100%" src="images/innovation_team_logo.jpg" alt="Yujin Robot"><br/>
+                        <img width="200" height="100%" src="images/australia_globe.png" alt="Australia"><br/>
+                        <img width="200" height="100%" src="images/tux-robot.png" alt="Tux Robot">
+                    </div>
+                    <h2>Who Am I?</h2>
+                    <p>
+                        Daniel Stonier
+                    </p>
+                    <p>
+                        Yujin Robot <a href="http://inno.yujinrobot.com">Innovation Team</a> Leader.<br/><br/>
+                        <small>
+                            Embedded/Control Engineer<br/>Algorithms Monkey<br/>Software Architect<br/><br/>
+                            <i>B Science., B Electrical Engineering, Phd. Mathematics.</i>
+                        </small>
+                    </p>
+                </section>
+                <section id="WhoAmI2">
+                    <h2>Who Am I?</h2>
+                    <div>
+                    <p style="text-align: left;">Robotics background...</p>
+                    <small>
+                        <ol>
+                            <li class="fragment"><b style="color:magenta;">University</b>
+                                <ul>
+        	                        <li>More Robotics/AI in math than in my engineering degree</li>
+                                    <li>Postdoc at KAIST in a robotics lab</li>
+                                </ul>
+                            </li>
+                            <li class="fragment"><b style="color:magenta;">Yujin Developer</b>
+                                <ul>
+			                        <li>Control Engineer</li>
+			                        <li>Vision system in Yujin cleaning robots</li>
+		                            <li>Had to accelerate development from one robot to the next</li>
+                                    <li>Had to implement processes for teams @ Yujin</li>
+		                            <ul>
+		                                <li>Found ROS 0.4 (2008)</li>
+		                            </ul>
+                                    <li>Moved the company across to ROS after a trial period</li>
+                                </ul>
+                            </li>
+                            <li class="fragment"><b style="color:magenta;">ROS Expert</b>
+		                        <ul>
+			                        <li>Contributed many patches for early versions of ROS (0.x.y)</li>
+			                        <li>Involved in designs and reviews for core ROS components</li>
+		                            <li>ROS software package maintainer</li>
+                                    <li>Project lead for Turtlebot 2 - the ROS reference robot</li>
+		                            <li>Collaborated with international ROS teams on projects</li>
+			                        <li>Annual speaker at ROSCon conferences</li>
+			                        <li>Regular contact with the ROS directors (Brian Gerkey/Tully Foote)</li>
+			                    </ul>
+                            </li>
+                        </ol>
+                    </small>
+                    </div>
+
+                    <aside class="notes">
+                        Some blah about my journey
+                    </aside>
+                </section>
+                <section id="WhoAmIPictures">
+                    <h2>Who Am I?</h2>
+                    <div style="line-height: 300px;">
+                      <img style="display: inline-block; vertical-align: middle; line-height: normal; padding: 30px;" width="250" src="images/geek.jpg" alt="Math Geek"/>
+                      <img style="display: inline-block; vertical-align: middle; line-height: normal; margin-left: 30px; margin-right: 30px;" width="50" src="images/arrow_right_blue.png" alt="Arrow"/>
+                      <img style="display: inline-block; vertical-align: middle; line-height: normal; padding: 30px;" src="images/terminator.jpg" alt="Terminator"/>
+                    </div>
+                </section>
+                <section id="WhoAmIPictures2">
+                    <h2>Who Am I?</h2>
+                    <div style="line-height: 300px;">
+                      <img style="display: inline-block; vertical-align: middle; line-height: normal; padding: 30px;" width="250" src="images/geek.jpg" alt="Math Geek"/>
+                      <img style="display: inline-block; vertical-align: middle; line-height: normal; margin-left: 30px; margin-right: 30px;" width="50" src="images/arrow_right_blue.png" alt="Arrow"/>
+                      <img style="display: inline-block; vertical-align: middle; line-height: normal; padding: 30px;" src="images/replacement.jpg" alt="Replacement"/>
+                    </div>
+                </section>
+                <section id="RobotGlue">
+                    <h2>Robot Glue</h2>
+                    <div style="line-height: 200px;">
+                      <img style="display: inline-block; vertical-align: middle; line-height: normal; padding: 30px;" width="300" src="images/glue.jpg" alt="Replacement"/>
+                      <div style="display: inline-block; vertical-align: middle; line-height: normal; padding: 30px;">What is glue all about?</div>
+                    </div>
+                    <br/>
+                    <ol>
+                        <li class="fragment">Stick stuff together to <span style="color:cyan;">quickly</span> assemble assorted things.</li>
+                        <li class="fragment">Stick stuff together to make something <span style="color:magenta;">big</span>.</li>
+                        <li class="fragment">Stick <span style="color:yellow;">somebody else's stuff</span> together to leave everyone else for dead.</li>
+                    </ol>
+                    <aside class="notes">
+                    </aside>
+                </section>
+                <section id="HardwareGlue">
+                    <h2>IBM Compatible PC</h2>
+                    <p style="text-align: left;">The glue for computer hardware...</p>
+                    <img style="margin-left:auto; margin-right: auto; width: 600px;" src="images/ibm.jpg" alt="IBM"/>
+                    <aside class="notes">
+                    </aside>
+                </section>
+                <section id="SoftwareGlue">
+                    <h2>Windows OS</h2>
+                    <p style="text-align: left;">The glue for software application development...</p>
+                    <img style="margin-left:auto; margin-right: auto; width: 600px;" src="images/windows.jpg" alt="IBM"/>
+                    <aside class="notes">
+                    </aside>
+                </section>
+                <section id="HTMLGlue">
+                    <h2>The Web & HTML</h2>
+                    <p style="text-align: left;">The glue for connecting and businesses to the world ...</p>
+                    <img style="margin-left:auto; margin-right: auto; width: 400px;" src="images/web.jpg" alt="IBM"/>
+                    <aside class="notes">
+                    </aside>
+                </section>
+                <section id="OtherGlue">
+                    <h2>Others</h2>
+                    <ul>
+                        <li><span style="color:cyan;">Web 2.0 & Cloud</span> - software independant of platform.</li>
+                        <li class="fragment"><span style="color:cyan;">iOS/Android</span> - pc explosion in the hand</li>
+                        <li class="fragment"><span style="color:cyan;">IOT</span> - <span style="color:magenta;">still trying to find the glue....</span></li>
+                    </ul>
+                    <aside class="notes">
+                    </aside>
+                </section>
+                <section id="GlueSummary">
+                    <h2>What is the effect of the Glue?</h2>
+                    <p style="text-align: left;">This....</p>
+                    <div style="line-height: 300px;">
+                      <img style="display: inline-block; vertical-align: middle; line-height: normal;" width="250" src="images/field_alone.jpg" alt="Math Geek"/>
+                      <img style="display: inline-block; vertical-align: middle; line-height: normal;" width="250" src="images/field_alone.jpg" alt="Math Geek"/>
+                      <img style="display: inline-block; vertical-align: middle; line-height: normal;" width="250" src="images/field_alone.jpg" alt="Math Geek"/>
+                    </div>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="GlueSummary2">
+                    <h2>What is the effect of the Glue?</h2>
+                    <p style="text-align: left;">Becomes....</p>
+                    <div style="line-height: 300px;">
+                      <img style="display: inline-block; vertical-align: middle; line-height: normal;" width="400" src="images/field.jpg" alt="Math Geek"/>
+                    </div>
+                    <p style="text-align: right; color: yellow;">GAME ON!</p>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="RobotsAndGlue">
+                    <h2>Robots and Glue?</h2>
+                    <ul>
+                        <li class="fragment">Until now, only industrial and cleaning robots</li>
+                        <ul>
+                          <li class="fragment">pretty simple (no glue needed).</li>
+                        </ul>
+                        <li class="fragment">Finally, a <span style="color: magenta;">convergence</span> of great technologies!</li>
+                        <ul>
+                          <li class="fragment"><span style="color: cyan;">Sensing</span> : cheap lasers, 3d sensors (thanks gaming industry)</li>
+                          <li class="fragment"><span style="color: cyan;">CPU</span> : embedded power (thanks smart phones)</li>
+                          <li class="fragment"><span style="color: cyan;">Software</span> : a growing ecosystem of freely available software</li>
+                          <li class="fragment"><span style="color: cyan;">Batteries</span> : huge investments going on here</li>
+                        </ul>
+                    </ul>
+                    <br/>
+                    <p class="fragment" style="text-align: right; color: yellow;">Just missing the glue...</p>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="RoboticsPipeline">
+                    <h2>The Robotics Problem</h2>
+                    <img style="margin-left:auto; margin-right: auto; width: 600px;" src="images/robotics_pipeline.png" alt="IBM"/>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="RoboticsPipeline2">
+                    <h2>The Robotics Problem</h2>
+                    <p class="fragment">It'd be like today's world trying to talk and work with each other....</p>
+                    <p class="fragment"><span style="color:cyan;">without english.</span></p>
+                    <p class="fragment" style="text-align: right; color: yellow;">Thats why we need the glue...</p>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="WhatIsRos">
+                    <h2>What is ROS?</h2>
+                    <ul>
+                        <li>One of many robot glues that emerged in the 2000's</li>
+                        <li>Also Microsoft Robotics Studio, OROCOS, Orca, MOOS, YARP, OPROS.</li>
+                        <li>Emerged from Stanford in 2007.</li>
+                        <li>Migrated to Willow Garage and finally the Open Source Robotics Foundation.</li>
+                        <li><span style="color:yellow;">Not owned by a company.</span></li>
+                        <li><span style="color:yellow;">Not dependent on a university</span> and it's funding imperatives.</li>
+                    </ul>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="WhatIsRosTechnically">
+                    <h2>What is ROS Technically?</h2>
+                    <ul>
+                        <li><span style="color:magenta;">Software Ecosystem</span></li>
+                        <ul>
+                          <li>Alot of tools for packaging</li>
+                          <li>4000 publicly hosted software packages</li>
+                          <li>4 million package downloads a year</li>
+                          <li>Extensive community support for users</li>
+                          <li><span style="color:yellow;">40+% growth</span> every year for five years</li>
+                        </ul>
+                        <li><span style="color:magenta;">Plumbing</span></li>
+                        <ul>
+                          <li>Distributed Development Middleware</li>
+                          <li>Internal and External Communication SW</li>
+                          <li>Development Tools</li>
+                        </ul>
+                        <li><span style="color:magenta;">Capabilities</span></li>
+                        <ul>
+                          <li>Navigation Framework</li>
+                          <li>Drivers...</li>
+                        </ul>
+                    </ul>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="HowDoesItStackUp">
+                    <h2>How Does it Stack Up? - ROS is 정!</h2>
+                    <p style="text-align: left;">Compared to others (e.g. OPROS, MSRDS...)</p>
+                    <ul>
+                        <li><span style="color:cyan;">Crazy growth rate 40+%</span>, must be doing something right</li>
+                        <li>Not perfect software, but <span style="color:yellow;">does all the other things right</span></li>
+                        <ul>
+                            <li>Fantastic developer tools</li>
+                            <li>Huge and easy access to research software</li>
+                            <li>Backed it up with the world's leading proof of concept (pr2)</li>
+                            <li>Doesn't force big changes to your existing development patterns</li>
+                        </ul>
+                        <li>Doesn't try to be the tool for every job</li>
+                    </ul>
+                </section>
+                <section id="WhereIsRosGoing">
+                    <h2>Where is ROS Going?</h2>
+                    <ul>
+                        <li><span style="color:magenta;">ROS 1.0 (2010)</span></li>
+                        <ul>
+                          <li>Targeted Universities</li>
+                          <li>Primarily for single robots</li>
+                          <li>Validated by the PR2</li>
+                        </ul>
+                    </ul>
+                    <img style="margin-left:auto; margin-right: auto; width: 600px;" src="images/pr2.jpg" alt="IBM"/>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="WhereIsRosGoing2">
+                    <h2>Where is ROS Going?</h2>
+                    <ul>
+                        <li><span style="color:magenta;">ROS 2.0 (2016-)</span></li>
+                        <ul>
+                          <li>Targeting <span style="color:cyan;">companies</span></li>
+                          <li>Other <span style="color:cyan;">platform connectivity</span></li>
+                          <ul>
+                            <li>Web, embedded, multi-robot</li>
+                          </ul>
+                          <li>Shifting to <span style="color:cyan;">DDS middleware</span></li>
+                          <ul>
+                            <li>Communicate with the big boys - NASA, Military, Auto</li>
+                          </ul>
+                        </ul>
+                    </ul>
+                    <aside class="notes">
+                        Overview
+                    </aside>
+                </section>
+                <section id="HowWeUseROS">
+                    <h2>How We Use ROS (Yujin)</h2>
+                    <ul>
+                        <li><span style="color: magenta;">Rapid prototyping and development</span></li>
+                        <ul>
+                          <li>Our 1st ROS robot migrated from another robot in 1/2 time.</li>
+                          <li>Managers were happy.</li>
+                          <li>New recruits have less to learn.</li>
+                        </ul>
+                        <li><span style="color: magenta;">Less bug hunting</span></li>
+                        <ul>
+                          <li>Great debugging tools that we never have time to make.</li>
+                          <li>I often work with 2-3 other international engineers on bugfixes to core software.</li>
+                        </ul>
+                        <li><span style="color: magenta;">Packaging Software</span></li>
+                        <ul>
+                          <li>Has an entire framework already, we don't need to build.</li>
+                        </ul>
+                        <li><span style="color: magenta;">The robotics community</span></li>
+                        <ul>
+                          <li>Get priveleged priority on fixes/features we need.</li>
+                          <li>Large network of people to lean on for expertise.</li>
+                          <li>Easier to recruit high quality interns/developers.</li>
+                        </ul>
+                     </ul>
+                    <aside class="notes">
+                    </aside>
+                </section>
+                <section id="HowWeUseROS2">
+                    <h2>How We Use ROS (Yujin)</h2>
+                    <p style="text-align: left;">Key points...</p>
+                    <br/>
+                    <p class="fragment">Use for building, prototyping and visualisations</p>
+                    <p class="fragment">It is <span style="color: cyan">faster</span> with <span style="color: cyan">less bugs</span>.</p>
+                    <br/>
+                    <p class="fragment">Don't try to use everywhere, just where it improves <span style="color:magenta;">efficiency</span>.</p>
+                    <br/>
+                    <p class="fragment">Spend more time focusing on our <span style="color: yellow;">differentiators</span>.</p>
+                </section>
+                <section id="ImportantMessages">
+                    <h2>Important Messages - I</h2>
+                    <br/>
+                    <p style="text-align: left;">Be wary of everything done in-house:</p>
+                    <br/>
+                    <p>Differentiators are important, but not everything is a differentiator. <span style="color: magenta;">Too slow</span>.</p>
+                </section>
+                <section id="ImportantMessages2">
+                    <h2>Important Messages - II</h2>
+                    <br/>
+                    <p style="text-align: left;">The future of OSRF is not yet certain</p>
+                    <br/>
+                    <p>It is at least well funded for the next few years (DARPA) which should give it time to find it's long term business model.</p>
+                </section>
+                <section id="ImportantMessages3">
+                    <h2>Important Messages - III</h2>
+                    <br/>
+                    <p style="text-align: left;">Watch out for fanboys about ROS, OPROS, open source...</p>
+                    <br/>
+                    <p>No tool is perfect for every job.</p>
+                </section>
+                <section id="ImportantMessages4">
+                    <h2>Important Messages - IV</h2>
+                    <br/>
+                    <p style="text-align: left;">Over-hyped robotics...</p>
+                    <br/>
+                    <p>We've had 20 years of this, it's a kind of naiveity...remember robotics is entering the <span style="color: magenta;">real world</span> and humans suck here as well,
+                    but <span style="color: cyan;">good work</span> can be done by both robots and humans.</p>
+                </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
