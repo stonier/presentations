@@ -46,7 +46,6 @@
 			<div class="slides">
 				<section>
 					<h1>ROS Biz</h1>
-					<h3>Is it worth investing in?</h3>
 					<p>
 						<small><a href="http://github.com/stonier">Daniel Stonier</a> / <a href="mailto:d.stonier@gmail.com">d.stonier@gmail.com</a></small>
 					</p>
@@ -84,31 +83,30 @@
                             </li>
                             <li class="fragment"><b style="color:magenta;">Yujin Developer</b>
                                 <ul>
-			                        <li>Control Engineer</li>
-			                        <li>Vision system in Yujin cleaning robots</li>
-		                            <li>Had to accelerate development from one robot to the next</li>
+                                    <li>Control Engineer</li>
+                                    <li>Vision system in Yujin cleaning robots</li>
+                                    <li>Had to accelerate development from one robot to the next</li>
+                                    <ul>
+                                        <li>Found ROS 0.4 (2008)</li>
+                                    </ul>
                                     <li>Had to implement processes for teams @ Yujin</li>
-		                            <ul>
-		                                <li>Found ROS 0.4 (2008)</li>
-		                            </ul>
                                     <li>Moved the company across to ROS after a trial period</li>
                                 </ul>
                             </li>
                             <li class="fragment"><b style="color:magenta;">ROS Expert</b>
-		                        <ul>
-			                        <li>Contributed many patches for early versions of ROS (0.x.y)</li>
-			                        <li>Involved in designs and reviews for core ROS components</li>
-		                            <li>ROS software package maintainer</li>
-                                    <li>Project lead for Turtlebot 2 - the ROS reference robot</li>
-		                            <li>Collaborated with international ROS teams on projects</li>
-			                        <li>Annual speaker at ROSCon conferences</li>
-			                        <li>Regular contact with the ROS directors (Brian Gerkey/Tully Foote)</li>
-			                    </ul>
+                                <ul>
+                                    <li>Contributed many patches for early ROS (0.x.y)</li>
+                                    <li>Participated in design sessions for core ROS components</li>
+                                    <li>ROS software package maintainer</li>
+                                    <li>Turtlebot 2 Project Lead - the ROS reference robot</li>
+                                    <li>Collaborated with international ROS teams</li>
+                                    <li>Annual speaker at ROSCon conferences</li>
+                                    <li>Regular contact with the ROS directors</li>
+                                </ul>
                             </li>
                         </ol>
                     </small>
                     </div>
-
                     <aside class="notes">
                         Some blah about my journey
                     </aside>
@@ -177,7 +175,7 @@
                 </section>
                 <section id="GlueSummary">
                     <h2>What is the effect of the Glue?</h2>
-                    <p style="text-align: left;">This....</p>
+                    <p style="text-align: left;">From everyone trying to play on their own playing field...</p>
                     <div style="line-height: 300px;">
                       <img style="display: inline-block; vertical-align: middle; line-height: normal;" width="250" src="images/field_alone.jpg" alt="Math Geek"/>
                       <img style="display: inline-block; vertical-align: middle; line-height: normal;" width="250" src="images/field_alone.jpg" alt="Math Geek"/>
@@ -189,7 +187,7 @@
                 </section>
                 <section id="GlueSummary2">
                     <h2>What is the effect of the Glue?</h2>
-                    <p style="text-align: left;">Becomes....</p>
+                    <p style="text-align: left;">To just one playing field....</p>
                     <div style="line-height: 300px;">
                       <img style="display: inline-block; vertical-align: middle; line-height: normal;" width="400" src="images/field.jpg" alt="Math Geek"/>
                     </div>
@@ -201,19 +199,21 @@
                 <section id="RobotsAndGlue">
                     <h2>Robots and Glue?</h2>
                     <ul>
-                        <li class="fragment">Until now, only industrial and cleaning robots</li>
+                        <li>Until now, only industrial and cleaning robots
+                            <ul>
+                                <li>pretty simple (no glue needed).</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">Finally, a <span style="color: magenta;">convergence</span> of great technologies!
                         <ul>
-                          <li class="fragment">pretty simple (no glue needed).</li>
+                          <li><span style="color: cyan;">Sensing</span> : cheap lasers, 3d sensors (thanks gaming industry)</li>
+                          <li><span style="color: cyan;">CPU</span> : embedded power (thanks smart phones)</li>
+                          <li><span style="color: cyan;">Software</span> : a growing ecosystem of freely available software</li>
+                          <li><span style="color: cyan;">Batteries</span> : huge investments going on here</li>
                         </ul>
-                        <li class="fragment">Finally, a <span style="color: magenta;">convergence</span> of great technologies!</li>
-                        <ul>
-                          <li class="fragment"><span style="color: cyan;">Sensing</span> : cheap lasers, 3d sensors (thanks gaming industry)</li>
-                          <li class="fragment"><span style="color: cyan;">CPU</span> : embedded power (thanks smart phones)</li>
-                          <li class="fragment"><span style="color: cyan;">Software</span> : a growing ecosystem of freely available software</li>
-                          <li class="fragment"><span style="color: cyan;">Batteries</span> : huge investments going on here</li>
-                        </ul>
+                        </li>
                     </ul>
-                    <br/>
+                    <br/><br/>
                     <p class="fragment" style="text-align: right; color: yellow;">Just missing the glue...</p>
                     <aside class="notes">
                         Overview
@@ -221,7 +221,7 @@
                 </section>
                 <section id="RoboticsPipeline">
                     <h2>The Robotics Problem</h2>
-                    <img style="margin-left:auto; margin-right: auto; width: 600px;" src="images/robotics_pipeline.png" alt="IBM"/>
+                    <img style="margin-left:auto; margin-right: auto; width: 90%;" src="images/robotics_pipeline.png" alt="IBM"/>
                     <aside class="notes">
                         Overview
                     </aside>
@@ -229,7 +229,9 @@
                 <section id="RoboticsPipeline2">
                     <h2>The Robotics Problem</h2>
                     <p class="fragment">It'd be like today's world trying to talk and work with each other....</p>
+                    <br/>
                     <p class="fragment"><span style="color:cyan;">without english.</span></p>
+                    <br/>
                     <p class="fragment" style="text-align: right; color: yellow;">Thats why we need the glue...</p>
                     <aside class="notes">
                         Overview
@@ -237,14 +239,20 @@
                 </section>
                 <section id="WhatIsRos">
                     <h2>What is ROS?</h2>
+                    <br/>
                     <ul>
                         <li>One of many robot glues that emerged in the 2000's</li>
-                        <li>Also Microsoft Robotics Studio, OROCOS, Orca, MOOS, YARP, OPROS.</li>
-                        <li>Emerged from Stanford in 2007.</li>
-                        <li>Migrated to Willow Garage and finally the Open Source Robotics Foundation.</li>
+                        <ul>
+                            <li>ROS, MS Robotics Studio, OROCOS, MOOS, OPROS...</li>
+                        </ul>
+                        <li>2007 - emerged from Stanford.</li>
+                        <li>2008 - migrated to Willow Garage.</li>
+                        <li>2012 - migrated to the Open Source Robotics Foundation.</li>
                         <li><span style="color:yellow;">Not owned by a company.</span></li>
                         <li><span style="color:yellow;">Not dependent on a university</span> and it's funding imperatives.</li>
                     </ul>
+                    <br/><br/>
+                    <p style="color:cyan">It is a glue for robotics software and hardware</p>
                     <aside class="notes">
                         Overview
                     </aside>
@@ -284,15 +292,19 @@
                         <li>Not perfect software, but <span style="color:yellow;">does all the other things right</span></li>
                         <ul>
                             <li>Fantastic developer tools</li>
-                            <li>Huge and easy access to research software</li>
-                            <li>Backed it up with the world's leading proof of concept (pr2)</li>
+                            <li>Huge and easy access to research software.</li>
+                            <li>Backed it up with the world's most sophisticated robot.</li>
                             <li>Doesn't force big changes to your existing development patterns</li>
                         </ul>
                         <li>Doesn't try to be the tool for every job</li>
                     </ul>
+                    <br/><br/>
+                    <p style="color: magenta;">No insidious marketing or soft support from government</p>
+                    <br/>
+                    <p style="color: magenta;">Entrepenaurial - best by virtue of being the best</p>
                 </section>
                 <section id="WhereIsRosGoing">
-                    <h2>Where is ROS Going?</h2>
+                    <h2>Where has ROS Been?</h2>
                     <ul>
                         <li><span style="color:magenta;">ROS 1.0 (2010)</span></li>
                         <ul>
@@ -327,74 +339,76 @@
                     </aside>
                 </section>
                 <section id="HowWeUseROS">
-                    <h2>How We Use ROS (Yujin)</h2>
+                    <h2>ROS & Yujin</h2>
+                    <p style="text-align: left;">We use ROS for:</p>
+                    <small>
                     <ul>
-                        <li><span style="color: magenta;">Rapid prototyping and development</span></li>
-                        <ul>
-                          <li>Our 1st ROS robot migrated from another robot in 1/2 time.</li>
-                          <li>Managers were happy.</li>
-                          <li>New recruits have less to learn.</li>
-                        </ul>
-                        <li><span style="color: magenta;">Less bug hunting</span></li>
-                        <ul>
-                          <li>Great debugging tools that we never have time to make.</li>
-                          <li>I often work with 2-3 other international engineers on bugfixes to core software.</li>
-                        </ul>
-                        <li><span style="color: magenta;">Packaging Software</span></li>
-                        <ul>
-                          <li>Has an entire framework already, we don't need to build.</li>
-                        </ul>
-                        <li><span style="color: magenta;">The robotics community</span></li>
-                        <ul>
-                          <li>Get priveleged priority on fixes/features we need.</li>
-                          <li>Large network of people to lean on for expertise.</li>
-                          <li>Easier to recruit high quality interns/developers.</li>
-                        </ul>
+                        <li class="fragment"><span style="color: cyan;">Rapid</span> prototyping and development</li>
+                        <li class="fragment">A build environment to <span style="color: cyan;">manage complexity</span>
+                            <ul>
+                               <li>even if the project is not using ROS.</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">As a desired criteria for new recruits
+                            <ul>
+                                <li><span style="color: cyan;">shorter learning curves</span>.</li>
+                            </ul>
+                        </li>
+                        <li class="fragment">A way to <span style="color: cyan;">collaborate</span> with other companies
+                             <ul>
+                                <li>on tools & frameworks</li>
+                                <li>and build our <span style="color: yellow;">differentiators</span> inside these</li>
+                             </ul>
+                        </li>
+                        <li class="fragment"><span style="color: cyan;">Packaging software</li> 
+                        <li class="fragment"><span style="color: cyan;">Visualisation</span> and <span style="color: cyan;">debugging</span> tools</li>
+                        <li class="fragment">Access to the Ros community</span>
+                            <ul>
+                                <li>priveleged priority on <span style="color: cyan;">fixes</span> & <span style="color: cyan;">features</span> we need.</li>
+                                <li>a network of people to lean on for <span style="color: cyan;">expertise</span>.</li>
+                            </ul>
+                        </li>
                      </ul>
+                     </small>
+                     <br/><br/>
+                     <p  class="fragment" style="color:yellow;">It accelerates what we do.</p>
+                     <br/>
+                     <p  class="fragment" style="text-align: right">But its not our only accelerator.</p>
                     <aside class="notes">
                     </aside>
                 </section>
-                <section id="HowWeUseROS2">
-                    <h2>How We Use ROS (Yujin)</h2>
-                    <p style="text-align: left;">Key points...</p>
-                    <br/>
-                    <p class="fragment">Use for building, prototyping and visualisations</p>
-                    <p class="fragment">It is <span style="color: cyan">faster</span> with <span style="color: cyan">less bugs</span>.</p>
-                    <br/>
-                    <p class="fragment">Don't try to use everywhere, just where it improves <span style="color:magenta;">efficiency</span>.</p>
-                    <br/>
-                    <p class="fragment">Spend more time focusing on our <span style="color: yellow;">differentiators</span>.</p>
-                </section>
-                <section id="ImportantMessages">
+                <section id="ImportantMessages0">
                     <h2>Important Messages - I</h2>
                     <br/>
-                    <p style="text-align: left;">Be wary of everything done in-house:</p>
+                    <p style="text-align: left;">Is ROS a <span style="color:yellow">differentiator</span>?</p>
                     <br/>
-                    <p>Differentiators are important, but not everything is a differentiator. <span style="color: magenta;">Too slow</span>.</p>
+                    <div class="fragment">
+                    <p>No, look elsewhere for differentiators.</p>
+                    <p>It does infer that time is not wasted on non-differentiators.</p>
+                    <p>Doing it all yourself is <span style="color: magenta;">too slow</span>.</p>
+                    </div>
                 </section>
                 <section id="ImportantMessages2">
                     <h2>Important Messages - II</h2>
                     <br/>
-                    <p style="text-align: left;">The future of OSRF is not yet certain</p>
+                    <p style="text-align: left;">The future of OSRF is not yet certain...</p>
                     <br/>
-                    <p>It is at least well funded for the next few years (DARPA) which should give it time to find it's long term business model.</p>
+                    <div class="fragment">
+                    <p>Stable funding for the next few years (DARPA)</p>
+                    <p>Incredible growth rate</p>
+                    <p style="color: cyan">Should give it a chance for long term strategy to emerge.</p>
+                    </div>
                 </section>
                 <section id="ImportantMessages3">
                     <h2>Important Messages - III</h2>
                     <br/>
-                    <p style="text-align: left;">Watch out for fanboys about ROS, OPROS, open source...</p>
+                    <p style="text-align: left;">Watch out for fanboys preaching about ROS, OPROS...</p>
                     <br/>
-                    <p>No tool is perfect for every job.</p>
+                    <div class="fragment">
+                    <p style="color:magenta">People who preach should be thinking more about about their product/differentiators.</p>
+                    </div>
                 </section>
-                <section id="ImportantMessages4">
-                    <h2>Important Messages - IV</h2>
-                    <br/>
-                    <p style="text-align: left;">Over-hyped robotics...</p>
-                    <br/>
-                    <p>We've had 20 years of this, it's a kind of naiveity...remember robotics is entering the <span style="color: magenta;">real world</span> and humans suck here as well,
-                    but <span style="color: cyan;">good work</span> can be done by both robots and humans.</p>
-                </section>
-			</div>
+                </div>
 
 		</div>
 
