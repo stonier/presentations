@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Add the full path if eclipse is not in PATH
+exec eclipse -data ~/workspace/presentations
