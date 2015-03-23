@@ -1,7 +1,14 @@
-presentations
+Presentations
 =============
 
 Reveal JS style presentations.
+
+On Github Pages
+---------------
+
+These presentations automagically show up on github io.
+
+* [Seoul Tech Society - Intro to Robotics](http://stonier.github.io/presentations/seoul_tech_robotics/index.html)
 
 Installation Requirements
 -------------------------
