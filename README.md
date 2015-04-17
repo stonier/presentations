@@ -34,3 +34,8 @@ Speaker Notes
 
 * In the root of your presentation, run `grunt serve` or `grunt serve --port 8001`
 * Point your browser at http://localhost:8000
+
+Export PDF
+----------
+
+* Add the suffix to the URL: http://.../.../index.html?print-pdf
