@@ -109,59 +109,34 @@
 	                    </ul>
 	                </div>
                 </section>
-                <section id="History">
-	                <section id="History1">
-	                    <h2>1.0 - History</h2>
-	                    <br/>
-	                    <small>
-	                    <ul>
-	                        <li>2007 : Stanford (STAIR, PR1)</li>
-	                        <li>2007 : Topology : Master/Node/Param Server concepts fixed</li>
-	                        <li>2007 : Transports : reliable (TCP)/unreliable (UDP) types defined</li>
-	                        <li>2007 : Messaging Patterns : publishers, subscribers & services</li>
-	                        <li>2007 : <text style="color:cyan">Implementation : Posix C++</text></li>
-	                        <li>2008 : Moved to Willow Garage</li>
-	                        <li>2008 : Reference Robot : PR2</li>
-	                        <li>2008 : Implementation : Lisp</li>
-	                        <li>2009 : Implementation : Python</li>
-	                        <li>2009 : Implementation : ARM support for c++</li>
-	                        <li>2009 : Messaging Patterns : actions (c++/python)</li>
-	                        <li>2010 : Nodelets (IntraProcess, c++ only)</li>
-	                        <li>2010 : <text style="color:cyan">1.0 Release</text></li>
-	                        <li>2011 : Reference Robot : Turtlebot</li>
-	                        <li>2011 : Implementation : Windows support for c++</li>
-	                        <li>2011 : Implementation : Java/Android</li>
-	                        <li>2012 : <text style="color:magenta">ROS 2.0 movement started</text></li>
-	                        <li>2014 : Transferred to OSRF</li>
-	                    </ul>
-	                    </small>
-	                    <aside class="notes">
-	                        Overview
-	                    </aside>
-	                </section>
-                    <section id="HistoryMotivation1">
-                        <h2>1.0 - Motivation</h2>
-                        <br/>
-                        <p>
-                            Designed to be flexible, but use case targets imposed some
-                            <text style="color:magenta">artificial boundaries</text>
-                            due to lack of coverage when developing/testing (primary
-                            driver was the PR2). 
-                        </p>
-                        <br/>
-                        <p>
-                            ROS 1.0 is <text style="color:magenta">ideally</text> primed for:
-                        </p>
-                        <br/>
-                        <ul>
-                          <li>Complex Robots</li>
-                          <li>Single Robot/Workstation environments</li>
-                          <li>Robotics Research Labs</li>
-                        </ul>
-                        <aside class="notes">
-                            Overview
-                        </aside>
-                    </section>
+                <section id="History1">
+                    <h2>1.0 - History</h2>
+                    <br/>
+                    <small>
+                    <ul>
+                        <li>2007 : Stanford (STAIR, PR1)</li>
+                        <li>2007 : Topology : Master/Node/Param Server concepts fixed</li>
+                        <li>2007 : Transports : reliable (TCP)/unreliable (UDP) types defined</li>
+                        <li>2007 : Messaging Patterns : publishers, subscribers & services</li>
+                        <li>2007 : <text style="color:cyan">Implementation : Posix C++</text></li>
+                        <li>2008 : Moved to Willow Garage</li>
+                        <li>2008 : Reference Robot : PR2</li>
+                        <li>2008 : Implementation : Lisp</li>
+                        <li>2009 : Implementation : Python</li>
+                        <li>2009 : Implementation : ARM support for c++</li>
+                        <li>2009 : Messaging Patterns : actions (c++/python)</li>
+                        <li>2010 : Nodelets (IntraProcess, c++ only)</li>
+                        <li>2010 : <text style="color:cyan">1.0 Release</text></li>
+                        <li>2011 : Reference Robot : Turtlebot</li>
+                        <li>2011 : Implementation : Windows support for c++</li>
+                        <li>2011 : Implementation : Java/Android</li>
+                        <li>2012 : <text style="color:magenta">ROS 2.0 movement started</text></li>
+                        <li>2014 : Transferred to OSRF</li>
+                    </ul>
+                    </small>
+                    <aside class="notes">
+                        Overview
+                    </aside>
                 </section>
                 <section id="State">
                     <h2>Current State</h2>
@@ -184,24 +159,28 @@
                 <section id="Technicals">
 	                <section id="Topology1">
 	                    <h2>1.0 - Topology</h2>
+                        <br/>
+                        <p>
+                          <text style="color:cyan">Centralised, static management of a distributed system</text>
+                        </p>
 	                    <br/>
 	                    <p style="text-align: left;">
-	                      <text style="color:cyan">Master</text> - name registration and lookup
+	                      <text style="color:magenta">Master</text> - name registration and lookup
 	                    </p>
                         <p style="text-align: left;">
-                          <text style="color:cyan">Node</text> - processes that perform computation.
+                          <text style="color:magenta">Node</text> - processes that perform computation.
                         </p>
                         <p style="text-align: left;">
-                          <text style="color:cyan">Parameter Server</text> - centralised data storage typically used for configuration of nodes.
+                          <text style="color:magenta">Parameter Server</text> - centralised data storage typically used for configuration of nodes.
                         </p>
                         <p style="text-align: left;">
-                          <text style="color:cyan">Topics</text> - where publishers and subscribers interact.
+                          <text style="color:magenta">Topics</text> - where publishers and subscribers interact.
                         </p>
                         <p style="text-align: left;">
-                          <text style="color:cyan">Services</text> - where service servers and clients interact.
+                          <text style="color:magenta">Services</text> - where service servers and clients interact.
                         </p>
                         <p style="text-align: left;">
-                          <text style="color:cyan">Names</text> - filesystem-like naming structure for all ROS components (e.g. /stanford/robot/name) 
+                          <text style="color:magenta">Names</text> - filesystem-like naming structure for all ROS components (e.g. /stanford/robot/name) 
                         </p>
                         <br/>
                         <p class="fragment">The glue for making this work is via xmlrpc servers at each component.
@@ -402,7 +381,7 @@
 	                        </ul>
 	                        <li><text style="color:magenta">Backwards compatibility</text> - support ways of talking with ROS 1.0</li>
 	                    </ul>
-                        <li><text style="color:cyan">Decisions</text>
+                        <li><text style="color:cyan">Development</text>
 	                    <ul>
 	                        <li><text style="color:magenta">Design</text> - messaging/library/stack layout</li>
 	                        <li><text style="color:magenta">Simple examples</text> - validated working pubsub/services, ...</li>
@@ -419,7 +398,7 @@
                     <br/>
                     <p><text style="color:cyan">It’ll be ready when it’s ready.</text></p>
                     <br/>
-                    <p><text style="color:magenta">Current Target</text></p>
+                    <p><text style="color:magenta">Nearest Target</text></p>
                     <p style="text-align: left">Working prototype with fundamental components available for human consumption ~end of summer 2015.</p> 
                     <br/>
                     <br/>
@@ -485,6 +464,9 @@
                     <section id="Transports2">
                         <h2>2.0 - Transports</h2>
                         <br/>
+                        <p><text style="color:cyan">Harness QoS capabilities from DDS.</text></p>
+                        <p><text style="color:cyan">Establish common profiles for robotics.</text></p>
+                        <br/>
                         <small>
                         <ul>
                             <li>Focus on <text style="color:magenta">reliable</text> and <text style="color:magenta">unreliable</text></li>
@@ -533,6 +515,20 @@
                             <text style="color:magenta">C++/Python</text> - worked well for ROS 1.0, no reason to change it.
                          </p>
                     </section>
+                    <section id="Managed2">
+                        <h2>2.0 - Managing a Runtime System</h2>
+                        <br/>
+                        <p style="text-align: left">
+                            <text style="color:magenta">Managed Nodes</text> - component style nodes with
+                            lifecycle patterns (~OPROS, OROCOS). Supports new use cases, but doesn't replace
+                            freeform ROS node patterns.
+                         </p>
+                        <p style="text-align: left">
+                            <text style="color:magenta">Graph Management</text> - explore ways to manage the
+                            computational and topological graphs. Interesting target, but still in discussion
+                            and a long ways off. Design thoughts going into development of the node API. 
+                         </p>
+                    </section>
                 </section>
                 <section id="Legacy Support">
                     <h2>Legacy Support</h2>
@@ -545,8 +541,8 @@
                     </aside>
                 </section>
                 <section>
-                    <h1>THE END</h1>
-                    <h3>By Daniel Stonier / d.stonier@gmail.com</h3>
+                    <h1>Q&A</h1>
+                    <h3>Daniel Stonier / d.stonier@gmail.com</h3>
                 </section>
 
 
