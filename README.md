@@ -9,6 +9,7 @@ On Github Pages
 These presentations automagically show up on github io.
 
 * [Seoul Tech Society - Intro to Robotics](http://stonier.github.io/presentations/seoul_tech_robotics/index.html)
+* [Apr 2015 - ROS Communications 1.0 & 2.0](http://stonier.github.io/presentations/ros_communications/index.html#/)
 
 Installation Requirements
 -------------------------
