@@ -8,8 +8,9 @@ On Github Pages
 
 These presentations automagically show up on github io.
 
-* [Mar '15 - Intro to Robotics (Seoul Tech Society)](http://stonier.github.io/presentations/seoul_tech_robotics/index.html)
-* [Apr '15 - ROS Communications 1.0 & 2.0 (Korean Service Robot Modularity Workshop)](http://stonier.github.io/presentations/ros_communications/index.html#/)
+* [Dec '16 - The Obligatory Introduction (Walkabout)](http://stonier.github.io/presentations/1612-the_obligatory_introduction/index.html)
+* [Mar '15 - Intro to Robotics (Seoul Tech Society)](http://stonier.github.io/presentations/1505-seoul_tech_robotics/index.html)
+* [Apr '15 - ROS Communications 1.0 & 2.0 (Korean Service Robot Modularity Workshop)](http://stonier.github.io/presentations/1505-ros_communications/index.html#/)
 
 Installation Requirements
 -------------------------
