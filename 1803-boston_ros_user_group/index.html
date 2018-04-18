@@ -1,0 +1,964 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Behind Closed Doors</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css"> <!-- league (gray), black, -->
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background="images/backgrounds/closed_doors.jpg" id="title">
+                    <h1>Behind Closed Doors</h1>
+                    <h3>Innovating a Robot with ROS</h3>
+                    <p>
+                        <small><a href="https://snorriheim.atlassian.net/wiki/spaces/~snorri">Daniel Stonier</a> <<a href="d.stonier@gmail.com">d.stonier@gmail.com</a>></small>
+                    </p>
+                </section>
+                <section>
+	                <section id="WhoAmI">
+	                    <h2>Who Am I?</h2>
+	                    <img width="100%" src="images/world.png" alt="Who Am I"/>
+	                    <p>
+	                        <small>
+	                            <i>B Science<br/>B Electrical Engineering<br/>Phd. Mathematics</i>
+	                        </small>
+	                    </p>
+	                </section>
+	                <section data-background="images/backgrounds/pr2_snooker.jpeg" id="RosCommunity">
+	                    <h2>Open Source &amp; ROS Community</h2>
+	                    <h4>2008-2018</h4>
+	                    <small>
+	                        <ul>
+	                            <li>Eigen Very Early Days</li>
+	                            <li>Patches for ROS on ARM <text style="color:grey">(Willow Garage)</text></li>
+	                            <li>ROS on Windows <text style="color:grey">(Willow Garage)</text></li>
+	                            <li>Catkin <text style="color:grey">(Willow Garage/OSRF)</text></li>
+	                            <li>RosJava <text style="color:grey">(Damon Kohler@Google)</text></li>
+	                            <li>ROCON <text style="color:grey">(University of Texas at Austin/OSRF)</text></li>
+	                            <li>Sophus <text style="color:grey">(Strasdat@Imperial College)</text></li>
+	                            <li>Ecto, OpenCV &amp; many others</li>
+	                            <li>Drake <text style="color:grey">(MIT-TRI)</text></li>
+	                            <li>ROS2 <text style="color:grey">(OSRC-TRI)</text></li>
+	                        </ul>
+	                        <ul>
+	                            <li>2014 - ROSKong Co-Chair</li>
+	                            <li>2016 - ROSCon Local Chair</li>
+	                        </ul>
+	                    </small>
+	                </section>
+	                <section data-background="images/backgrounds/top_hat.jpg" id="TheManyHats">
+	                    <h2>The Many Hats</h2>
+	                    <p>
+	                        <small>
+	                            Mathematician<br/>Lecturer<br/>Control Engineer<br/>Algorithms Monkey<br/>Software Developer<br/>
+	                            <text style="color:green">Software Architect</text><br/>
+	                            <text style="color:green">Innovation Team Leader</text><br/>
+	                            Technical Program Manager<br/>
+	                            <br/>
+	                        </small>
+	                    </p>
+	                </section>
+	                <section data-background="images/backgrounds/there_and_back_again.jpeg" id="ThereAndBackAgain">
+	                    <h2>There And Back Again</h2>
+	                    <img width="100%" src="images/there_and_back_again.png" alt="There And Back Again"/>
+	                </section>
+				</section>
+                <section id="InnovatingAndArchitecting">
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingFront">
+                        <h2>Innovating &amp; Architecting</h2>
+                        <h3>2013-2016</h3>
+                        <br><p><i>How often do you get to design from scratch and work with a team to implement it?</i></p>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingKick">
+                        <h2>KickStarting</h2>
+                        <p><text style="color:orange">Frustrated? Don't Complain .......Do Something About It!</text></p>
+                        <p><text style="color:green">The Innovation Team</text></p>
+	                    <p>
+	                        <small>
+	                            Disband existing groups and 'new product' lines<br/>
+	                            Grow a small team (from two people)<br/>
+	                            50% International / 50% Korean<br/>
+	                            'Spin-Along' autonomously (freedom to break shackles)<br/>
+	                            <br/>
+	                        </small>
+	                    </p>
+                        <p><text style="color:green">The Ask</text></p>
+	                    <p>
+	                        <small>
+	                            Identify the next 'product' (completely open scope)<br/>
+	                            Prototype, field test it and flip it over to product teams<br/>
+	                            Introduce new processes and improve the work culture at the company<br/>
+	                            <br/>
+	                        </small>
+	                    </p>
+                        <aside class="notes">
+                            Innovations vs Conflict, You'll Soon Start Failing as Much as the Next Guy
+                        </aside>
+                    </section>
+                    <section id="Gophering">
+                        <h2>Gophering</h2>
+                        <img width="33%" src="images/gopher_wheel_mechanism_prototype.jpg" alt="Wheels"></img><br/>
+                        <img width="33%" src="images/gocart_team_informal.jpg" alt="Gocart Sketch"></img>
+                        <img width="33%" src="images/surfing.jpg" alt="Surfing"></img>
+                        <aside class="notes">
+                            xxx
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingTeamGoCart">
+                        <img width="100%" src="images/team_gocart.jpeg" alt="Team GoCart"/>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingSoftwareVertical">
+                        <h2>The Phases of Development</h2>
+                        <img width="85%" src="images/timeline.png" alt="Timeline"/>
+                        <p><i><text style="color:green">Who, What and When do you inject with Awesomeness?</text></i></p>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingSoftwareVertical">
+                        <h2>The Software Vertical</h2>
+                        <img height="60%" src="images/the_gopher_vertical.png" alt="The Vertical"/><br/>
+                        <p><i>Alot of expertise and styles spread across a small team</i></p>
+                        <p><i><text style="color:green">Where do you draw the boundaries?</text></i></p>
+                        <aside class="notes">
+                            That's alot of different tools & styles<br/>
+                            Had a very young...inexperienced team of not rocket scientists...needed quite a bit of guiding.
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingRules">
+                        <h2>Rules of the Game</h2>
+                        <p>
+                            <small>
+                                Align with the Product, Not What is 'Right'<br/>
+                                Unblock Development Workflows<br/>
+                                Working first, refine later (1st pass, 2nd pass, ...)<br/>
+                                What is your Team's Skills?<br/>
+                                Implementation + Usability<br/>
+                                Zero Configuration<br/>
+                                Build for a Family of Similar Robots (expect to zag)<br/>
+                           </small>
+                       </p>
+                        <aside class="notes">
+                          Align - technical rights as well as milestone alignment for non-tech reasons, no distractions
+                        </aside>
+                    </section>
+                </section>
+                <section id="GophersROS">
+                    <section data-background="images/backgrounds/team_gocart.png" id="GophersROSFrontPage">
+                        <h2>Building Gophers</h2>
+                        <h4>Where is ROS?</h4>
+                        <p>
+                            <small>
+                                ROS Marching Towards Product<br/>
+                                ROS Boundaries<br/>
+                                Software Management<br/>
+                                Cross Compiling<br/>
+                                ROSLaunch<br/>
+                                RQT & RViz<br/>
+                                The Navi Stack<br/>
+                                Decision Making Level<br/>
+                                Usability<br/>
+                           </small>
+                       </p>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="GophersROSTimeline">
+                        <h2>Gopher's ROS Timeline</h2>
+                        <img width="85%" src="images/ros_timeline.png" alt="Gopher's ROS Timeline"/>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="GophersROSTimeline2">
+                        <h2>ROS Incoming - Outgoing</h2>
+                        <h4>Marching towards Product</h4>
+                        <br/>
+	                    <small>
+	                       <table style="width:100%">
+							  <tr>
+							    <th align="center"><text style="color:cyan">Embracing</text></th>
+							    <th align="center"><text style="color:green">Incoming</text></th>
+							    <th align="center"><text style="color:orange">Outgoing</text></th>
+							  </tr>
+							  <tr>
+							    <td align="center">
+							      Build Environment<br/>
+							      RViz<br/>
+							      Roslaunch<br/>
+							      TF<br/>
+							      RQT<br/>
+							      Rosbag<br/>
+							      Middleware<br/><text style="color:grey">(w/ fine print)</text>
+							    </td>
+							    <td align="center">
+							      Data Collection Infrastructure<br/>
+							      <text style="color:grey">(Closed Source)</text> Build & Release<br/>
+							      Forked Open Source Drivers<br/>
+							      Decision Making Engine<br/>
+							      Application Layer
+							    </td>
+							    <td align="center">
+							      Open Source Algorithms<br/>
+							      NaviStack<br/>
+							      MultiRobot SW<br/>
+							      ROS Web Tools<br/>
+							    </td>
+							  </tr>
+							</table>
+	                    </small>
+	                    <p><text style="color:green"><i>ROS disappears where<br/>1) performance is needed <br/>2) you move up the stack</text></i></p>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="ROSBoundaries">
+                        <h2>ROS Boundaries</h2>
+                        <img width="80%" src="images/ros_boundaries.png" alt="ROS Boundaries"/>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="ManagingDevWorkflows">
+                        <h2>Software Management</h2>
+                        <p>
+                            <text style="color:green">Some Useful Goals for a Large Stack / Small Team</text><br/>
+                            <small>
+                                <br/>
+                                Avoid Having Devs to Download / Update & Build Everything<br/>
+                                Avoid Setup and Release Effort of BuildBot / ROS Build Farm<br/>
+                                A Workflow that Continually Tests a Binary Install<br/>
+                                Stable and Release Versions<br/>
+                           </small>
+                       </p>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="Workspaces">
+                        <h2>Software Management</h2>
+                        <img width="90%" src="images/development_workspaces.png" alt="Workspaces"/>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InstallWorkspaces">
+                        <h2>Building & Sharing Binaries</h2>
+                        <img width="90%" src="images/install_workspaces.png" alt="Install Workspaces"/>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="CrossCompiling">
+                        <h2>Cross-Compiling</h2>
+                        <h4>Manage Non-ROS Arm/C++ Software with Catkin</h4>
+                        <img width="90%" src="images/cross_compiled_workspaces.png" alt="Install Workspaces"/>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="CrossCompiling2">
+                        <h2>Cross-Compiling</h2>
+                        <p>Defer to CMake's Toolchain and Pre-Cache Functions</text></p>
+	                    <small>
+	                        <ul>
+	                            <li><text style="color:grey"><code>-DCMAKE_TOOLCHAIN_FILE</code></text> sets the compiler</li>
+	                            <li><text style="color:grey"><code>-C my_config.cache</code></text> sets flags for your cpu/architecture</li>
+	                            <li>pass these in after <text style="color:grey"><code>--cmake-args</code></text> to <text style="color:grey"><code>catkin_make</code></text></li>
+	                        </ul>
+	                    </small>
+                        <p></p>
+                        <small>
+	                        <ul>
+	                            <li><a href="https://github.com/yujinrobot/yujin_tools/tree/master/src/yujin_tools/toolchains">Example Toolchains</a></li>
+	                            <li><a href="https://github.com/yujinrobot/yujin_tools/tree/master/src/yujin_tools/platforms">Example Platforms</a></li>
+	                        </ul>
+	                    </small>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="CrossCompiling3">
+                        <h2>Cross-Compiling</h2>
+                        <p><text style="color:green">Get Engineers Cross-Compiling without being aware of it?</text></p>
+	                    <small>
+	                        <ul>
+	                            <li>Small python wrapper scripts around catkin_make</li>
+	                            <li>Reach out to github for links to rosinstalls/toolchains/platforms</li>
+	                        </ul>
+	                    </small>
+                        <p><text style="color:green"><i>Big enabler for the cross-compiling teams!</i></p>
+                        <pre>
+<code>$ yujin_init_workspace dslam ./dslam_ws
+$ cd dslam_ws
+
+# Fetch a list of toolchains from https://github.com/yujinrobot/yujin_tools/tree/master/src/yujin_tools/toolchains
+$ yujin_init_build --list-toolchains
+
+***************** Toolchain List *****************
+Official:
+ -- buildroot/arm-buildroot-linux-gnueabihf
+ -- buildroot/arm-cubie-linux-gnueabihf
+ -- buildroot/arm-buildroot-linux-gnueabi
+ -- ubuntu/arm-linux-gnueabihf
+ -- ubuntu/arm-linux-gnueabi
+ -- ubuntu/i586-mingw32msvc
+ -- nexell/arm-generic-linux-gnueabi
+ -- code_sourcery/arm-none-linux-gnueabi
+Custom:
+ --
+
+# Fetch a list of platforms from https://github.com/yujinrobot/yujin_tools/tree/master/src/yujin_tools/toolchains
+$ yujin_init_build --list-platforms
+
+***************** Platform List *****************
+Official:
+ -- generic/native
+ -- arm/cortex-a7
+ -- arm/arm1176jzf-s
+ -- arm/arm1176jzf-s-hardfp
+ -- intel/atom330
+ -- intel/atomn270
+ -- intel/i5
+Custom:
+ --
+
+$ yujin_init_build --platform native --toolchain=arm1176jzf-s
+$ yujin_make</code>
+                        </pre>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="Roslaunch">
+                        <h2>Roslaunch</h2>
+                        <p><text style="color:maroon">The XML nesting and parameterisation can become confoundingly complex</text></p><br/>
+	                    <small>
+	                        <ul>
+	                            <li>Environment variables are useful for robot type/version and feature toggles</li>
+	                            <li>Args and parameters for everything else</li>
+	                        </ul>
+	                    </small>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="GophersRQTRViz">
+                        <h2>RQt & RViz</h2>
+                        <h4>Ridiculously Hard to Escape these Tools</h4>
+                        <br/>
+                        <small>
+	                      <p><text style="color:green"><i>Almost guaranteed you won't have a 'Tools' team</i></p>
+	                      <p><text style="color:green"><i>Roboticists will build & iterate on RQT & RViz plugins matching their needs<br/>(but not web apps, nor with a web team)</i></p>
+	                      <p><text style="color:green"><i>RViz as THE single portal into the robot is immensely useful</i></p>
+	                    </small>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="GophersRQTRViz2">
+                        <h2>RQt & RViz</h2>
+                        <h4>Ridiculously Hard to Escape these Tools</h4>
+                        <img width="85%" src="images/dslam.png" alt="Gopher's ROS Timeline"/>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="GophersRQTRViz3">
+                        <h2>RQt & RViz</h2>
+                        <h4>Debugging for Devs, Test Engineers, Field Site Admins</h4>
+                        <img width="60%" src="images/debugging.png" alt="Gopher's ROS Timeline"/>
+	                    <p><text style="color:green"><i>And do it while riding the robot itself</text></i></p>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="NaviStack1">
+                        <h2>NaviStack</h2>
+                        <h4>Great to get Started, but there is no Silver Bullet</h4>
+	                    <small>
+	                        <text style="color:green">Walkthrough</text><br/>
+                            <ul>
+	                            <li>Navistack is a 'Point to Point' Navigation System</text></li>
+	                            <li>Originally seems to be a Controller/Planner</text></li>
+	                            <li>Planners are nicely pluggable</text></li>
+	                            <li>Move Base is really quite trivial</text></li>
+	                            <li>Navi Layers at first seem nicely pluggable, but</text></li>
+	                            <li><text style="color:maroon">Navi Layers are not probabilistic</text></li>
+	                            <li><text style="color:maroon">Navi Layers enforce non-programmatic constraints on the fusion</text></li>
+	                        </ul>
+	                    </small>
+                        <pre>
+<code>lidar_layer:
+  enabled:               true
+  footprint_clearing_enabled: true
+  ...
+  combination_method:    1
+  accuracy_multiplier_bits: 20
+  clear_corner_cases:    true
+  track_unknown_space:   true
+  use_cached_updating:   true
+  observation_sources:   left right front_left front_right
+  extensions:
+    do_selective_clearing: false
+    reset_every_cycle:     false</code>
+                        </pre>
+                      <aside class="notes">
+                      </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="NaviStack2">
+                        <h2>NaviStack</h2>
+                        <h4>Start thinking about Navigation...</h4>
+                        <text style="color:green">Many Contexts<br/>All require Perception-Planning-Control</text><br/>
+	                    <small>
+	                        <br/>
+                            <ul>
+	                            <li>Navigate from A to B <text style="color:grey"><- Move Base</text></li>
+	                            <li>Navigate along this corridor</text></li>
+	                            <li>Park/Unpark</text></li>
+	                            <li>Dock/Undock</text></li>
+	                            <li>Initialise the localisation</text></li>
+	                            <li>Elevator entry/exit</text></li>
+	                            <li>Traverse this ramp</text></li>
+	                        </ul>
+	                    </small>
+  	                    <br/>
+                        <br/><text style="color:orange">Keep routing separate! (i.e. don't make the 'super planner')</text>
+                        <br/><text style="color:orange">Keep it simple! (e.g. don't add 'sounds', do that elsewhere)</text>
+                      <aside class="notes">
+                      </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="NaviStack3">
+                        <h2>NaviStack</h2>
+                        <h4>Ready for your Own NaviStack?</h4>
+	                    <small>
+	                        <br/>
+                            <ul>
+                                <li>Listen to your use case - there is no silver bullet (yet) and this needs to be 100% robust</li>
+	                            <li><a href="https://github.com/ethz-asl/grid_map">Grid Map</a> is likely to be at the core of it</li>
+	                            <li>Routing at a much higher level (often used in a cost analysis before tasking a robot)</text></li>
+	                            <li>Stitch contexts / notifications / exception handling in a decision engine (e.g. behaviour trees)</text></li>
+	                        </ul>
+	                    </small>
+  	                    <br/>
+                        <br/><text style="color:green">Now you're ready for some interesting times!!!</text>
+                      <aside class="notes">
+                      </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingPlanning">
+                        <h2>Planning</h2>
+                        <img width="100%" src="images/hybrid_planner.png" alt="Planning"/>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingTrees">
+                        <h2>Behaviour Trees</h2>
+                        <video data-autoplay>
+                            <source data-src="videos/behaviour_trees.mp4" type="video/mp4" />
+                        </video>
+                        <p>
+                            <small>
+                                PyTrees (<a href="https://github.com/stonier/py_trees">github</a>) (<a href="http://py-trees.readthedocs.io/en/devel/">docs</a>)
+                                PyTrees for ROS (<a href="https://github.com/stonier/py_trees_ros/tree/devel">github</a>) (<a href="https://stonier.github.io/py_trees_ros/">docs</a>)
+                            </small>
+                        </p>
+                    </section>
+                </section>
+                <section id="GophersTech">
+                    <section data-background="images/backgrounds/team_gocart.png" id="GophersTechFrontPage">
+                        <h2>Gophers</h2>
+                        <h4>Technical Considerations</h4>
+                        <p>
+                            <small>
+                                Lights & Sounds<br/>
+                                <br/>
+                                C++ Packages - the Right Way<br/>
+                                Ghosts<br/>
+                                Intra vs Inter-Process<br/>
+                                Real-Time or Not?<br/>
+                                Sensing<br/>
+                                System Optimisation<br/>
+                                Testing - How and What to Prioritise?<br/>
+                                <br/>
+                           </small>
+                       </p>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="GophersTechSounds">
+                        <h2>Lights and Sounds</h2>
+                        <p>Not usually a top priority <text style="color:orange">however ...</text></p>
+                        <br><p>A well thought out 'expressions' subsystem is an enabler</p>
+                        <br><p>For developers, testers, field site personnel, users & non-users</p>
+                        <br><p><text style="color:green"><i>Before it becomes a product, have fun with it!</text></i></p>
+                        <aside class="notes">
+                            Identifying and shoring up weaknesses in those right people.
+                        </aside>
+                    </section>
+                </section>
+                <section id="GophersStories">
+                    <section data-background="images/backgrounds/team_gocart.png" id="GophersStoriesFrontPage">
+                        <h2>Gophers</h2>
+                        <h4>Stories</h4>
+                        <p>
+                            <small>
+                                Roles<br/>
+                                Hands Off (Not the Code...)<br/>
+                                The Gophers that Weren't<br/>
+                                Choosing a Partner<br/>
+                                Buy-In From Varying SW Groups<br/>
+                                The Happy Guy<br/>
+                                Supporting Workflows<br/>
+                                Acupuncture - Nailing The Pain Points<br/>
+                                Zero Configuration<br/>
+                                Innovation in Development<br/>
+                                Borked (Bent out of Shape) Agile<br/>
+                                Minimum Viable Product<br/>
+                                The Navi Stack<br/>
+                                Behaviour Trees<br/>
+                                Podium Simulations<br/>
+                                <br/>
+                            </small>
+                        </p>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingRoles">
+                        <h2>Roles</h2>
+                        <p>
+                            <small>
+                                Founder &amp; Co-Leader<br/>
+                                Hiring<br/>
+                                Product &amp; Biz Decision Making<br/>
+                                Service Design<br/>
+                                Technology Direction<br/><br/>
+                                <text style="color:green">Technology &amp; Software Architect</text><br/>
+                                Direction<br/>
+                                Technology Choices<br/>
+                                Framework/Architecture<br/>
+                                Requirements<br/>
+                                Guided Design<br/>
+                                Mentoring<br/>
+                                Reviews<br/>
+                                Verification &amp; Validation<br/>
+                                Collaborations<br/>
+                                Firefighting<br/>
+                                Core Module Development &amp; Handoff<br/>
+                            </small>
+                        </p>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingHandsOff">
+                        <h2>Hands Off</h2>
+                        <br><p><i>What <text style="color:green">should</text> you do ... not what <text style="color:green">can</text> you do!</i></p>
+                        <br><p><i>Get the right people in the right places ... as much as possible</i></p>
+                        <br><p><i>Point, Stumble &amp; Fall, Pick 'Em Up ... Sometimes the only way</i></p>
+                        <aside class="notes">
+                            Identifying and shoring up weaknesses in those right people.
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingBizDev">
+                        <h2>The Gophers That Weren't</h2>
+                        <img width="25%" src="images/gopher-death_stare.gif" alt="Gopher"/>
+                        <br/>
+                        <img width="25%" src="images/gocaf.jpeg" alt="GoCaf"/>
+                        <img width="25%" src="images/margo.jpeg" alt="Margo"/>
+                        <img width="26%" src="images/gocoke-girls.jpeg" alt="GoCoke"/>
+                        <aside class="notes">
+                            Brochure, Go Fishing - Don't Expect them to Jump in the Boat, Requirements Driving Software<br/>
+                            GoCoke - Trouble, Savioke, LabTests (Urine, RPooPee2)<br/>
+                            Hotel Delivery Last Mile<br/>
+                            Partners, get them keen<br/>
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingBizDev">
+                        <h2>The Gophers That Weren't</h2>
+                        <h4>RPooPee2</h4>
+                        <br/>
+                        <img width="80%" src="images/rpoopeetwo.jpg" alt="RPooPee2"/>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="GophersChoosingAPartner">
+                        <h2>Choosing a Partner</h2>
+                        <br><p><i>Whose Bed to Jump Into?</i></p>
+                        <br><p><i>How to Commit?</i></p>
+                        <aside class="notes">
+                            Bizdev to paint a picture
+                            Partners, someone on their side should be keen<br/>
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingBuyIn">
+                        <h2>Buy-In</h2>
+                        <br><p><i><text style="color:orange">What colour carrot?</text></i></p>
+                        <br><p><i><text style="color:red">Or is it a Stick?</text></i></p>
+                        <aside class="notes">
+                            Everyone - Field Tests &amp; GUG, JaeYeong - Big Man, Huey - A Gateway.
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingTheHappyGuy">
+                        <h2>The Happy Guy</h2>
+                        <img width="100%" src="images/espanol.jpg" alt="Espanol"/>
+                        <aside class="notes">
+                            Be Careful - Pitching For and Maybe Against...Spanish!
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingSupportingWorkflows">
+                        <h2>Supporting Workflows</h2>
+                        <br><p><i>Not just design, implement.....make it 'fit'!</i></p>
+                        <aside class="notes">
+                            Fitting is important<br/>
+                            Need to know something of the system it is going to.<br/>
+                            Write bucketloads of documentation...iteratively, or make it fit yourself!<br/>
+                            Another part of buy-in<br/>
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingAcupuncture">
+                        <h2>Acupuncture</h2>
+                        <h4>Nail the Pain Points</h4>
+                        <br><p><i>Target points of wasted manpower ... but also stress points</i></p>
+                        <img class="fragment" width="100%" src="images/gopher_desktop_utilities.png" alt="Desktop Utilities"/>
+                        <aside class="notes">
+                            Happy team is a productive team<br/>
+                            Devs, surprisingly, usually aren't going to do this if it is 'out of their box'<br/>
+                            Desktop Utilities for ROS (Time and Stress), Podium Simulations for Web Groups (Stress)<br/>
+                            Cancelled our Deb Build Farm<br/>
+                            Gopher User Guide for Field Engineers<br/>
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingZeroConfiguration">
+                        <h2>Zero Configuration</h2>
+                        <br><p><i>Robotics is complicated enough</i></p>
+                        <br><p><i>Eliminate or expose only what is necessary</i></p>
+                        <aside class="notes">
+                        Example, docking stations.
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingInnovationInDevelopment">
+                        <h2>Innovation In Development</h2>
+                        <br><p><i>No Networking Guy, But We Support Building Wide Fleets?</i></p>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingBorkedAgile">
+                        <h2>Borked Agile</h2>
+                        <h4>Bent Out of Shape</h4>
+                        <small>
+                        HW is waterfall, SW is agile<br/>
+                        Our product development is both<br/>
+                        Loosely affiliated teams that don't do Agile...<br/>
+                        The software vertical<br/>
+                        General feeling of 'getting in the way of development'<br/>
+                        </small>
+                        <aside class="notes">
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingBorkedAgile2">
+                        <h2>Borked Agile</h2>
+                        <h4>What Worked for Our Situation</h4>
+                        <small>
+                        <span class="fragment">
+                        Divide teams along lines of development overlap<br/>
+                        <text style="color:grey">(localisation, robot control + trees, server + web)</text><br/>
+                        Drop complicated 'JIRA' like software<br/>
+                        Hide irrelevant noise and planning from each group<br/>
+                        </span>
+                        <span class="fragment">
+                        <br/>
+                        BizDev &amp; Service Design &rarr; Broad requirements &amp; Constraints<br/>
+                        Teams &rarr; Architectural reqiurements &amp; Constraints<br/>
+                        Sequence <text style="color:green">Epics</text> in a Dependency Graph<br/>
+                        Bump priority for design of <text style="color:green">Epics of Impending Doom</text> <br/>
+                        <text style="color:green">Weekly Snapshots</text> over a google doc with each team (aka sprint)<br/>
+                        Requirements &rarr; Design &rarr; Implement &rarr; PR &rarr; Code Review &rarr; Iterate &rarr; Docs Cycle<br/>
+                        </span>
+                        <span class="fragment">
+                        <br/>
+                        Focus on clarity for Devs<br/>
+                        Focus on assisting Devs with their weak points<br/>
+                        Focus on being the <text style="color:green">crystal bridge</text> between teams<br/>
+                        </span>
+                        </small>
+                        <aside class="notes">
+                        Not recommendations for every situation, but our situtation<br/>
+                        Be clear about who was doing the epics...getting it out of the way of devs<br/>
+                        Interesting, once we had something working (third try), got good feedback from the devs<br/>
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingMinimumViableProduct">
+                        <h2>Minimum Viable Product</h2>
+                        <br><p><i>Get Something Usable, As Quickly As Possible</i></p>
+                        <img width="40%" src="images/minimum_viable_product.jpg" alt="Desktop Utilities"/>
+                        <aside class="notes">
+                        Had an expectation gap after the first year, mostly due to SW disinterest, had to close it<br/>
+                        Turned this into a catch phrase<br/>
+                        </aside>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingDSlam">
+                        <h2>DSlam</h2>
+                        <img width="100%" src="images/dslam.png" alt="DSlam"/>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingTrees">
+                        <h2>Behaviour Trees</h2>
+                        <video data-autoplay>
+                            <source data-src="videos/behaviour_trees.mp4" type="video/mp4" />
+                        </video>
+                        <p>
+                            <small>
+                                <text style="color:cyan">v1.0 coming for Xmas in Kinetic!</text><br/>
+                            </small>
+                        </p>
+                    </section>
+                    <section data-background="images/backgrounds/team_gocart.png" id="InnovatingAndArchitectingPlanning">
+                        <h2>Planning</h2>
+                        <img width="100%" src="images/hybrid_planner.png" alt="Planning"/>
+                    </section>
+                </section>
+                <section id="KobukiTurtlebot">
+                    <section data-background="images/backgrounds/kobuki-translucent-rendering.png" id="KobukiTurtlebot1">
+                        <h2>Kobuki &amp; Turtlebot</h2>
+                        <h4>Project Lead : 2011-2013</h4>
+                        <p>
+                            <small>
+                                First time as a lead<br/>
+                                Struggled with politics, promises &amp; expectations<br/>
+                                Nonetheless, successful project<br/>
+                                ~10k robots &amp; opened doors for recruiting<br/>
+                                <br/><text style="color:green">Take Aways</text><br/>
+                                Understand what your people can do<br/>
+                                Get the right people in the right roles<br/><br/>
+                           </small>
+                       </p>
+                    </section>
+                    <section data-background="images/backgrounds/kobuki-translucent-rendering.png" id="KobukiTurtlebot2">
+                        <h2>Kobuki &amp; Turtlebot</h2>
+                        <video data-autoplay>
+                            <source data-src="videos/kobuki-following-eunseong.mp4" type="video/mp4" />
+                        </video>
+                    </section>
+                    <section data-background="images/backgrounds/kobuki-translucent-rendering.png" id="KobukiTurtlebot3">
+                        <h2>Kobuki &amp; Turtlebot</h2>
+                        <video data-autoplay>
+                            <source data-src="videos/kobuki-dancing.mp4" type="video/mp4" />
+                        </video>
+                    </section>
+                    <!--
+                    <section data-background-video="videos/kobuki-following-eunseong.mp4" data-background-video-muted="true" id="KobukiTurtlebot2"></section>
+                    <section data-background-video="videos/kobuki-dancing.mp4" data-background-video-muted="true" id="KobukiTurtlebot3"> </section>
+                    -->
+                </section>
+                <section id="Rocon">
+                    <section data-background="images/backgrounds/rocon.png" id="RoconIntro">
+                        <h2>Robotics in Concert</h2>
+                            <h4>Software Design : 2011-2012</h4>
+                            <p>
+                                <small>
+                                    Robot-Human-Device Authoring Framework<br/>
+                                    Korean Government Consortium<br/>
+                                    Modules &amp; Concepts &rarr; Inno Team<br/>
+                                    <br/><text style="color:green">Take Aways</text><br/>
+                                    Learned alot about software (not control)**<br/>
+                                    Business &amp; Dev requirements contribute to architectural requirements<br/>
+                                    Building blocks can be more important than framework<br/>
+                                    Korean collaborations are hard...only found success with this later<br/>
+                                    Handle expectations lest they jump over the moon<br/>
+                                    Make sure your project has a real target<br/>
+                                    <br/>
+                               </small>
+                           </p>
+                    </section>
+                    <section data-background="images/backgrounds/rocon.png" id="RoconUseCases">
+                        <h2>Background</h2>
+                        <h4>Use Case Comparisons</h4>
+                        <p>
+                            <small>
+                                Starcraft for Robots <text style="color:green">(Willow)</text><br/>
+                                Field Command and Control <text style="color:green">(Clearpath)</text></br>
+                                Lab Human in the Loop <text style="color:green">(Universities/FKIE)</text><br/>
+                                Authoring for Human-Robot-Device Interactivity <text style="color:green">(Yujin)</text><br/>
+                                Remote (High Bandwidth) Control <text style="color:green">(Darpa Groups)</text><br/>
+                                Riding the Backbone <text style="color:green">(Web Tools Group)</text><br/>
+                            </small>
+                        </p>
+                    </section>
+                    <section data-background="images/backgrounds/rocon.png" id="RoconGettingOutOfTheRobot">
+                        <h2>Background</h2>
+                        <h4>Getting Out of the Robot</h4>
+                        <p>
+                            <small>
+                                Foreign Relays <text style="color:green">(Willow)</text><br/>
+                                Master Sync <text style="color:green">(Ken)</text><br/>
+                                Master Sync w/ Bells &amp; Whistles <text style="color:green">(FKIE)</text></br>
+                                Multimaster Registrations w/ Design Patterns <text style="color:green">(ROCON)</text><br/>
+                                ROS Serialised Blobs over Specialised Tunnels <text style="color:green">(Web Tools/Darpa)</text><br/>
+                                ROSBridge <text style="color:green">(Web Tools)</text><br/>
+                                ROSTFUL <text style="color:green">(Independant)</text><br/>
+                            </small>
+                        </p>
+                    </section>
+                    <section data-background="images/backgrounds/rocon.png" id="RoconGateways">
+                        <h2>Gateways</h2>
+                        <p>
+                            <small>
+                                Hides the ROS Masters <br/>
+                                <text style="color:grey">Public Interfaces </text><br/>
+                                Flipping, Advertising &amp; Pulling Patterns <br/>
+                                <text style="color:grey">Firewalls </text><br/>
+                                Auto Discovery <br/>
+                                <br/>
+                                <text style="color:cyan">v1.0 coming for Xmas in Kinetic!</text><br/>
+                            </small>
+                        </p>
+                    </section>
+                    <section data-background="images/backgrounds/rocon.png" id="RoconGatewaysDesignSketch">
+                        <h2>Gateway Requirements</h2>
+                        <img width="90%" src="images/gateways-design_sketch.jpg" alt="Design Sketch"/>
+                    </section>
+                    <section data-background="images/backgrounds/rocon.png" id="RoconGatewaysHub">
+                        <h2>Gateway Hub</h2>
+                        <img width="80%" src="images/gateways-hub.jpg" alt="Hub"/>
+                    </section>
+                    <section data-background="images/backgrounds/rocon.png" id="RoconGatewaysFlips">
+                        <h2>Gateway Flips</h2>
+                        <img width="80%" src="images/gateways-flipping.jpg" alt="Hub"/>
+                    </section>
+                    <section data-background="images/backgrounds/rocon.png" id="RoconGatewaysPulls">
+                        <h2>Gateway Pulls</h2>
+                        <img width="80%" src="images/gateways-pulling.jpg" alt="Hub"/>
+                    </section>
+                    <section data-background="images/backgrounds/rocon.png" id="AppableRobot">
+                        <h2>Appable Robot</h2>
+                        <img width="80%" src="images/remocon.png" alt="Remocon"/>
+                        <p>
+                            <small>
+                                <text style="color:cyan">v1.0 coming for Xmas in Kinetic!</text><br/>
+                            </small>
+                        </p>
+                    </section>
+                    <section data-background="images/backgrounds/rocon.png" id="RoconConcert">
+                        <h2>ROCON Concepts</h2>
+                        <p>
+                            <small>
+                                Retasking of Robots <text style="color:green">(Appable Robot)</text><br/>
+                                Humans, Devices &amp; Robots as System Resources <text style="color:green">(Concert)</text><br/>
+                                System Design ~ OS Design <text style="color:green">(Robots == IO Resources)</text><br/>
+                                Centralised Authoring/Scenarios <text style="color:green">(Enslaved Robots)</text><br/>
+                            </small>
+                        </p>
+                    </section>
+                    <section data-background="images/backgrounds/rocon.png" id="ConcertDesign">
+                        <h2>Concert Design Sketch</h2>
+                        <h4>To the Whiteboard!</h4>
+                    </section>
+                    <section data-background="images/backgrounds/rocon.png" id="ConcertProblems">
+                        <h2>(Some Interesting) Problems</h2>
+                        <p>
+                            <small>
+                                Lost the Groundwork Project <br/>
+                                <text style="color:grey">Lost the Real World Target </text><br/>
+                                Korean (No)Collaborations <br/>
+                                <text style="color:grey">Too Much Framework - Be Careful of Disabling vs Enabling </text><br/>
+                                Scheduling is Trickier and More Varied Than You Think <br/>
+                                <text style="color:grey">Important to Decouple Design around Business/Development Units</text><br/>
+                                <br/>
+                                <text style="color:green">ReOrient &amp; Focus &rarr; Innovation Team </text><br/>
+                            </small>
+                        </p>
+                    </section>
+                    <section data-background="images/backgrounds/rocon.png" id="ConcertGoCart">
+                        <h2>For the Gophers</h2>
+                        <p>
+                            <text style="color:cyan">The Delta</text><br/>
+                            <small>
+                                <br/>
+                                Concert is more support, less control<br/>
+                                <text style="color:grey">Loosely coupled microservices &amp; agent style</text><br/>
+                                No 'scenario' &rarr; jobs &amp; job services<br/>
+                                <text style="color:grey">Allow easy mix of ROS &amp; other on the concert</text><br/>
+                                Docker packaging<br/>
+                                <text style="color:grey">Extreme focus on minimal configuration &amp; ease of use</text></br>
+                                Increased focus on building blocks</br>
+                                <text style="color:grey">Logging, configuration, deployment, data sharing, authentication</text></br>
+                                <br/>
+                            </small>
+                        </p>
+                        <p>
+                            <text style="color:cyan">The Constant</text><br/>
+                            <small>
+                                <br/>
+                                Appable Robot still used for retasking &amp; admin Interactions<br/>
+                                <text style="color:grey">Gateways bulletproofed for robot-concert Comms </text><br/>
+                            </small>
+                        </p>
+                    </section>
+                </section>
+                <section id="CleaningRobot">
+                    <section data-background="images/backgrounds/cleaning_robot-homerun.png" id="CleaningRobotIntro">
+                        <h2>Cleaning Robot</h2>
+                        <h4>Algorithm Development : 2009-2010</h4>
+                        <p>
+                            <small>
+                                <br/><text style="color:green">Then</text><br/>
+                                Vision Slam<br/>
+                                University project &rarr; product<br/>
+                                Incubated with Phillips<br/>
+                                <br/><text style="color:green">Take Aways</text><br/>
+                                Discovered I like 'just me and the problem'<br/>
+                                Discovered I like 'research->product'<br/>
+                                Intimidating deadlines didn't phase me too much<br/>
+                                <br/><text style="color:green">Now</text><br/>
+                                Yujin's core robotics product<br/>
+                                Partnering with Miele<br/>
+                                ~100k robots per year<br/>
+                                <br/>
+                           </small>
+                       </p>
+                    </section>
+                    <section data-background="images/backgrounds/cleaning_robot-homerun.png" id="CleaningRobotCSlam">
+                        <img width="100%" src="images/cslam.jpeg" alt="CSlam"/>
+                    </section>
+                </section>
+                <section id="OtherProjects">
+                    <section data-background="images/backgrounds/there_and_back_again.jpeg"  id="OtherProjectsYujin">
+                        <h2>Other Projects - Yujin</h2>
+                        <h4>2008-2016</h4>
+                        <img width="30%" src="images/galaxy.jpg" alt="Galaxy"/>
+                        <img width="30%" src="images/tension_interpolation.png" alt="Tension Interpolations"/>
+                        <img width="30%" src="images/robhaz.jpg" alt="RobHaz"/><br/>
+                    </section>
+                    <section data-background="images/backgrounds/there_and_back_again.jpeg" id="OtherProjectsPhD">
+                        <h2>Piled Higher &amp; Deeper</h2>
+                        <h4>Stability Theory and Numerical Analysis of Non-Autonomous Dynamical Systems</h4>
+                        <img width="30%" src="images/forward_without_pullback.jpg" alt="Forward w/o Pullback"/>
+                        <img width="30%" src="images/pullback_convergence.jpg" alt="Pullback Convergence"/>
+                        <img width="30%" src="images/pullback_without_forward.jpg" alt="Pullback w/o Forward"/><br/>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // Parallax Background Image
+                // parallaxBackgroundImage: 'images/gocart.jpg',
+                // parallaxBackgroundSize: '1600px 1200px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+                // Number of pixels to move the parallax background per slide
+                // - Calculated automatically unless specified
+                // - Set to 0 to disable movement along an axis
+                // parallaxBackgroundHorizontal: 200,
+                // parallaxBackgroundVertical: 50
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
